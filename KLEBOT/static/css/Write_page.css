@@ -1,0 +1,8 @@
+.content, .comment, .context_write, .title_write, .comment_write, .footer{
+    width: 80%;
+    margin: auto;
+}
+
+.comment_num{
+    font-size: 180px;    
+}

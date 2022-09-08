@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<!--    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}">-->
+<!--    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap-theme.css') }}">-->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Write_page.css') }}">
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!--Custom CSS & JS -->
+    <title>content page</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+        integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+</head>
+
+<body>
+    <!--header / icon / menu-->
+    <div class="header container-fluid">
+        <img src="static/image/brand.png" width="400" class="mx-auto d-block">
+    </div>
+
+
+
+     <form action="/end_write" method="post">
+    <!--title_write-->
+        <div class="title_write">
+        <hr class="my-2">
+            <div class="form-group">
+                <textarea class="form-control" rows="1" name="input_title" placeholder="제목을 입력해주세요." required></textarea>
+            </div>
+    </div>
+
+    <!--context_write-->
+    <div class="context_write">
+        <hr class="my-2">
+
+            <div class="form-group">
+                <textarea class="form-control" rows="5" name="input_context" placeholder="내용을 입력해주세요" required></textarea>
+            </div>
+            <div class="d-flex justify-content-end form-inline mb-3">
+                <input type="text" class="form-control mr-2 " id="writer" name="writer" placeholder="글쓴이" required>
+                <input type="text" class="form-control mr-2" id="password" name="password" placeholder="비밀번호" required>
+                <button type="submit" class="btn btn-secondary">작성 완료</button>
+                <button type="submit" class="btn btn-secondary">취소</button>
+            </div>
+
+    </div>
+ </form>
+    <!--footer-->
+    <div class="footer bg-secondary">
+        <p class="my-auto">(39177) 경북 구미시 대학로 61 TEL : </p>
+        <p class="my-auto">COPYRIGHT(C) Kumoh National Institute of Technology KLE LAP. All Rights Reserved.</p>
+    </div>
+</body>
+
+</html>
