@@ -1,0 +1,49 @@
+*{
+    font-size: 1.3rem;
+    text-decoration: none;
+    color: black;
+}
+
+#title{
+    text-align: center;
+    margin: 20px 0;
+}
+
+#login-form{
+    width:500px;
+    height: 600px;
+    margin:100px auto;
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding: 15px;
+}
+
+.user{
+    margin-bottom: 30px;
+    margin-left: 30px;
+}
+
+.input{
+    width: 300px;
+}
+
+#sign_up_btn{
+    margin-left: 220px;
+}
+#id{
+    margin-right: 63px;
+}
+#pw{
+    margin-right: 35px;
+}
+#name{
+    margin-right: 90px;
+}
+#mail{
+    margin-right: 60px;
+
+}
+
+#input_answer{
+   width: 450px;
+}

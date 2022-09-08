@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+<link href="{{ url_for('static', filename='CSS/style.css') }}" rel="stylesheet">
+    <style>
+
+			@import url(http://fonts.googleapis.com/css?family=Roboto:300,400);
+
+			html, body {
+				margin: 0;
+				padding: 0;
+				background: #E8ECEF;
+				height: 100%;
+				width: 100%;
+				text-align: center;
+			}
+			h1{
+			    font: 400 30px roboto, "Open Sans", Helvetica, sans-serif;
+				text-transform: uppercase;
+			}
+			h2{
+			    font: 300 22px roboto, "Open Sans", Helvetica, sans-serif;
+				text-transform: uppercase;
+			}
+
+
+			.tabbed.round ul li {
+				border-radius: 8px 8px 0 0;
+			}
+			.tabbed.round ul li:before {
+				border-radius: 0 8px 0 0;
+			}
+			.tabbed.round ul li:after {
+				border-radius: 8px 0 0 0;
+			}
+
+
+
+     label {
+         text-align:left;
+         display: block;
+         margin-top: 20px;
+         letter-spacing: 2px;
+     }
+     form {
+         margin: 0 auto;
+         width: 459px;
+     }
+      textarea{
+         width: 439px;
+         height: 27px;
+         background-color: #efefef;
+         border-radius: 6px;
+         border: 1px solid #dedede;
+         padding: 10px;
+         margin-top: 3px;
+         font-size: 0.9em;
+         color: #3a3a3a;
+     }
+
+       input{
+         width: 439px;
+         height: 27px;
+         background-color: #efefef;
+         border-radius: 6px;
+         border: 1px solid #dedede;
+         padding: 10px;
+         margin-top: 3px;
+         font-size: 0.9em;
+         color: #3a3a3a;
+     }
+
+      input:focus, textarea:focus{
+       border: 1px solid #97d6eb;
+         }
+
+     textarea{
+         height: 60px;
+         background-color: #efefef;
+     }
+     #submit{
+         width: 127px;
+         height: 48px;
+         text-align: center;
+         border: none;
+         margin-top: 20px;
+         cursor: pointer;
+     }
+     #submit:hover{
+         color: #fff;
+         background-color: #216282;
+         opacity: 0.9;
+     }
+     #cancel {
+         width: 127px; height: 48px;
+         text-align: center;
+         border: none;
+         margin-top: 20px;
+         cursor: pointer;
+     }
+     #cancel:hover{
+         color: #fff;
+         background-color: #216282;
+         opacity: 0.9;
+     }
+
+     #start_button {
+         width: 127px; height: 48px;
+         text-align: center;
+         border: none;
+         margin-top: 20px;
+         cursor: pointer;
+         border-radius: 6px;
+     }
+
+     #start_button:hover{
+         color: #fff;
+         background-color: #216282;
+         opacity: 0.9;
+     }
+
+
+    .modal {
+         position: fixed;
+         left: 0;
+         top: 0;
+         width: 100%;
+         height: 100%;
+         background-color: rgba(0, 0, 0, 0.5);
+         opacity: 0;
+         visibility: hidden;
+         transform: scale(1.1);
+         transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
+         z-index: 1;
+     }
+     .modal-content {
+         position: absolute;
+         top: 50%;
+         left: 50%;
+         transform: translate(-50%, -50%);
+         background-color: white;
+         padding: 1rem 1.5rem;
+         width: 500px;
+         height: 600px;
+         border-radius: 0.5rem;
+     }
+     .close-button {
+         float: right;
+         width: 1.5rem;
+         line-height: 1.5rem;
+         text-align: center;
+         cursor: pointer;
+         border-radius: 0.25rem;
+         background-color: lightgray;
+     }
+     .close-button:hover {
+         background-color: darkgray;
+     }
+     .show-modal {
+         opacity: 1;
+         visibility: visible;
+         transform: scale(1.0);
+         transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+     }
+
+.homeBox {
+	position: relative;
+	float: left;
+	display: block;
+	text-align: center;
+}
+
+.container{
+ position: absolute;
+ width: 500px;
+ height: 500px;
+ left: 50%;
+ top: 50%;
+ margin-left: -250px;
+ margin-top: -250px;
+
+}
+
+
+.one_half, .one_third, .two_thirds, .one_fourth, .three_fourths, .one_fifth, .two_fifth, .three_fifths, .four_fifths {
+	position: relative;
+	margin: 0;
+	margin-right: 3.8%;
+	float: left;
+}
+.homeBox .one_fourth div, .homeBox .last div {
+	padding: 10px;
+}
+
+
+.homeBox .one_fourth .boxImage {
+	-webkit-transition: all 0.2s linear;
+	-moz-transition: all 0.2s linear;
+	-o-transition: all 0.2s linear;
+	transition: all 0.2s linear;
+}
+
+
+.homeBox .one_fourth h2 {
+	color: #4B4A4A;
+	margin: 0 0 10px 0;
+	-webkit-transition: all 0.2s linear;
+	-moz-transition: all 0.2s linear;
+	-o-transition: all 0.2s linear;
+	transition: all 0.2s linear;
+}
+
+
+
+
+.homeBox .one_fourth .boxDescription {
+	color: #4B4A4A;
+	margin: 0 0 10px 0;
+	-webkit-transition: all 0.2s linear;
+	-moz-transition: all 0.2s linear;
+	-o-transition: all 0.2s linear;
+	transition: all 0.2s linear;
+}
+
+
+
+
+@-webkit-keyframes moveFromTop {
+    from {
+        top: -600px;
+    }
+    to {
+      	top: auto;
+    }
+}
+@-moz-keyframes moveFromTop {
+    from {
+        -moz-transform: translateY(-600%);
+    }
+    to {
+        -moz-transform: translateY(0%);
+    }
+}
+@-ms-keyframes moveFromTop {
+    from {
+        -ms-transform: translateY(-600%);
+    }
+    to {
+        -ms-transform: translateY(0%);
+    }
+}
+
+@-webkit-keyframes moveFromBottom {
+    from {
+        bottom: -400px;
+    }
+    to {
+       	top: auto;
+    }
+}
+@-moz-keyframes moveFromBottom {
+    from {
+        -moz-transform: translateY(400%);
+    }
+    to {
+        -moz-transform: translateY(0%);
+    }
+}
+@-ms-keyframes moveFromBottom {
+    from {
+        -ms-transform: translateY(400%);
+    }
+    to {
+        -ms-transform: translateY(0%);
+    }
+}
+
+
+h5 {
+	 font-family:'Myriad Pro', Verdana, Arial, Helvetica, sans-serif; font-size:40px; color:black; letter-spacing:5px; text-align:center; letter-spacing:-2px;
+
+
+	/* Transform Effect */
+	-webkit-transition: all 0.12s ease-out;		/* Safari & Chrome */
+   	-moz-transition: all 0.12s ease-out;		/* Firefox */
+  	-o-transition: all 0.12s ease-out;			/* Opera */
+}
+    </style>
+</head>
+
+<body>
+   <h1 style="color:black; font-size:50px">Pass Master</h1>
+     <div class="modal">
+         <div class="modal-content">
+             <span class="close-button">&times;</span>
+             <h1 class="title">기본 정보 입력</h1>
+             <form action="/mic_test" method="POST">
+               <label for="text">회사명</label>
+               <input type="text" name="office_name" placeholder="회사명" required="required">
+                 <br>
+                 <label for="text">분야</label>
+               <input type="text" name="field" placeholder="분야" required="required">
+                 <br>
+
+               <label></label>
+               <input class = "radio_1" type="button" id="cancel" value="취소">
+                 <input class = "radio_1" type="submit" id="submit" value="보내기">
+
+
+             </form>
+         </div>
+     </div>
+
+
+<div class="container">
+	<div class="homeBox">
+
+
+			<div class="one_fourth" style="	width: 500px;
+	height: 500px;">
+				<div class = "boxImage"></div>
+                <div class = "boxDescription"><h5 style="color: black; font-weight: 500; margin-bottom:30px;" >AI 면접을 진행합니다.</h5> <br><br><br><br> <h5 style="font-size:20px">본 시스템을 이용하기 위해서는 <br> 웹캠과 마이크가 필요합니다.</h5></div>
+                <button class="trigger" id="start_button">시작하기</button>
+			</div>
+
+            <script type="text/javascript">
+         var modal = document.querySelector(".modal");
+         var trigger = document.querySelector(".trigger");
+         var closeButton = document.querySelector(".close-button");
+         var cancelButton = document.querySelector("#cancel");
+
+        //console.log(modal);
+
+        function toggleModal() {
+             modal.classList.toggle("show-modal");
+         }
+
+        function windowOnClick(event) {
+             if (event.target === modal) {
+                 toggleModal();
+             }
+         }
+
+        trigger.addEventListener("click", toggleModal);
+         closeButton.addEventListener("click", toggleModal);
+         cancel.addEventListener("click", toggleModal);
+         window.addEventListener("click", windowOnClick);
+
+
+     </script>
+
+	</div>
+</div>
+
+</body>
+</html>

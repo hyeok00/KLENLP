@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="{{ url_for('static', filename='CSS/mic_test.css') }}" rel="stylesheet">
+    <style>
+         #start_button {
+         width: 127px; height: 48px;
+         text-align: center;
+         border: none;
+         margin-top: 20px;
+         cursor: pointer;
+         border-radius: 6px;
+     }
+
+     #start_button:hover{
+         color: #fff;
+         background-color: #216282;
+         opacity: 0.9;
+     }
+
+       #ok_button {
+         width: 127px; height: 48px;
+         text-align: center;
+         border: none;
+         margin-top: 20px;
+         cursor: pointer;
+         border-radius: 6px;
+     }
+
+     #ok_button:hover{
+         color: #fff;
+         background-color: #216282;
+         opacity: 0.9;
+     }
+
+     p {
+	 font-family:'Myriad Pro', Verdana, Arial, Helvetica, sans-serif; font-size:22px; letter-spacing:5px; text-align:center; letter-spacing:-2px;
+
+
+
+	/* Transform Effect */
+	-webkit-transition: all 0.12s ease-out;		/* Safari & Chrome */
+   	-moz-transition: all 0.12s ease-out;		/* Firefox */
+  	-o-transition: all 0.12s ease-out;			/* Opera */
+}
+    </style>
+</head>
+<body>
+
+<h1 style="color:black; font-size:50px">Pass Master</h1>
+
+		<div class="tabbed round">
+			<ul>
+				<li>질문2</li>
+                <li>질문1</li>
+				<li>최근 이슈</li>
+                <li>지원 동기</li>
+				<li class="active">자기소개</li>
+			</ul>
+		</div>
+
+        <br>
+<div style="text-align:center; color:black">
+    <p>본 AI 면접은 자기소개, 지원동기, 최근이슈, 기업맞춤형 순으로 진행되며 <br>
+        면접이 끝나면 답변에 대해 긍정/부정, 객관/주관의 정도 파악 및 어휘 분석이 진행됩니다.</p> <br>
+    <p>간단한 마이크 테스트 후에 면접을 시작하겠습니다. 마이크 연결 후 아래 문장을 읽어주세요.</p>
+</div>
+<br>
+<div>
+<p style="font-size:22px; color:black"> 최선을 다했지만 결과는 좋지 않은 것 같다</p>
+    <form action = "/mic_test_start" method="post" style="display:inline">
+        <input type="submit" id="start_button" value="녹음 시작!">
+
+    </form>
+
+    {% if (null_check == 0) %}
+
+
+        <script>alert("마이크 인식에 실패했습니다. 마이크 설정 후 다시 시도 해주세요!")</script>
+    {% elif null_check == 1 %}
+
+            <script>
+            alert("마이크 테스트가 완료되었습니다, 다음 버튼을 눌러주세요")
+        </script>
+
+    {% endif %}
+
+    <form action = "/intro" method="post" style="display:inline">
+
+        <input type="submit" id="ok_button" value="다음">
+    </form>
+</div>
+
+</body>
+</html>

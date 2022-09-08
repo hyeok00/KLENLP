@@ -1,0 +1,2523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="{{ url_for('static', filename='CSS/final.css') }}" rel="stylesheet">
+    <!--<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">-->
+    <!--<link rel="stylesheet" href="{{ url_for('static', filename='CSS/bootstrap.min.css') }}">-->
+
+    <style>
+
+#tabs2 {
+  overflow: hidden;
+  width:100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+#tabs2 li {
+  float: left;
+  margin: 0 .5em 0 0;
+}
+
+#tabs2 a {
+  position: relative;
+  background: #ddd;
+  background-image: linear-gradient(to bottom, #fff, #ddd);
+  padding: .7em 3.5em;
+  float: left;
+  text-decoration: none;
+  color: #444;
+  text-shadow: 0 1px 0 rgba(255,255,255,.8);
+  border-radius: 5px 0 0 0;
+  box-shadow: 0 2px 2px rgba(0,0,0,.4);
+}
+
+#tabs2 a:hover,
+#tabs2 a:hover::after,
+#tabs2 a:focus,
+#tabs2 a:focus::after {
+  background: #fff;
+}
+
+#tabs2 a:focus {
+  outline: 0;
+}
+
+#tabs2 a::after {
+  content:'';
+  position:absolute;
+  z-index: 1;
+  top: 0;
+  right: -.5em;
+  bottom: 0;
+  width: 1em;
+  background: #ddd;
+  background-image: linear-gradient(to bottom, #fff, #ddd);
+  box-shadow: 2px 2px 2px rgba(0,0,0,.4);
+  transform: skew(10deg);
+  border-radius: 0 5px 0 0;
+}
+
+#tabs2 #current a,
+#tabs2 #current a::after {
+  background: #fff;
+  z-index: 3;
+}
+
+#content2 {
+  padding: 2em;
+  height: 300px;
+  position: relative;
+  z-index: 2;
+  border-radius: 0 5px 5px 5px;
+  box-shadow: 0 -2px 3px -2px rgba(0, 0, 0, .5);
+  border:1px solid;
+}
+
+
+
+h5 {
+    font-family:'Myriad Pro', Verdana, Arial, Helvetica, sans-serif; font-size:40px; color:black; letter-spacing:5px; text-align:center; letter-spacing:-2px;
+
+
+
+   /* Transform Effect */
+   -webkit-transition: all 0.12s ease-out;      /* Safari & Chrome */
+      -moz-transition: all 0.12s ease-out;      /* Firefox */
+     -o-transition: all 0.12s ease-out;         /* Opera */
+}
+h5:hover  {
+  -webkit-transform: scale(1.1);     /* Safari & Chrome */
+  -moz-transform: scale(1.1);       /* Firefox */
+  -o-transform: scale(1.1);           /* Opera */
+}
+
+
+
+  .tt {
+            position: relative;
+            display: inline-block;
+            border-bottom: 2px;
+        }
+
+        .tt .tt-text{
+            visibility: hidden;
+            width: 200px;
+            background-color: darkorange;
+            color: black;
+            text-align: center;
+            border-radius: 10px;
+            padding: 10px 5px;
+            position: absolute;
+            z-index: 1;
+            top: 200%;
+            left: 50%;
+            margin-left: -105px;
+
+        }
+
+        .tt:hover .tt-text {
+
+            visibility: visible;
+        }
+
+        .tt .tt-text::after {
+            content: "";
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            margin-left: -10px;
+            border-width: 10px;
+            border-style: solid;
+            border-color: transparent transparent darkorange;
+        }
+
+
+
+
+
+
+        .tt .tt-text2{
+            visibility: hidden;
+            width: 650px;
+            background-color: darkorange;
+            color: black;
+            text-align: center;
+            border-radius: 10px;
+            padding: 10px 5px;
+            position: absolute;
+            z-index: 1;
+            top: 200%;
+            left: 50%;
+            margin-left: -105px;
+
+        }
+
+        .tt:hover .tt-text2 {
+
+            visibility: visible;
+        }
+
+        .tt .tt-text2::after {
+            content: "";
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            margin-left: -10px;
+            border-width: 10px;
+            border-style: solid;
+            border-color: transparent transparent #E8ECEF;
+        }
+
+
+
+
+
+
+    </style>
+
+    <script language="JavaScript" type="text/javascript">
+    function Change(){
+  var key = part_3.value;
+  if(key==1){
+  document.all["d1"].style.display="block";
+  document.all["d2"].style.display="none";
+  document.all["d3"].style.display="none";
+  document.all["d4"].style.display="none";
+  document.all["d5"].style.display="none";
+  }
+  if(key==2){
+  document.all["d1"].style.display="none";
+  document.all["d2"].style.display="block";
+  document.all["d3"].style.display="none";
+  document.all["d4"].style.display="none";
+  document.all["d5"].style.display="none";
+  }
+  if(key==3){
+  document.all["d1"].style.display="none";
+  document.all["d2"].style.display="none";
+  document.all["d3"].style.display="block";
+  document.all["d4"].style.display="none";
+  document.all["d5"].style.display="none";
+  }
+    if(key==4){
+  document.all["d1"].style.display="none";
+  document.all["d2"].style.display="none";
+  document.all["d3"].style.display="none";
+  document.all["d4"].style.display="block";
+  document.all["d5"].style.display="none";
+  }
+    if(key==5){
+  document.all["d1"].style.display="none";
+  document.all["d2"].style.display="none";
+  document.all["d3"].style.display="none";
+  document.all["d4"].style.display="none";
+  document.all["d5"].style.display="block";
+  }
+
+ }
+
+
+
+       function Change2(){
+  var key = part_2.value;
+  if(key==1){
+  document.all["a1"].style.display="block";
+  document.all["a2"].style.display="none";
+  document.all["a3"].style.display="none";
+  document.all["a4"].style.display="none";
+  document.all["a5"].style.display="none";
+  }
+  if(key==2){
+  document.all["a1"].style.display="none";
+  document.all["a2"].style.display="block";
+  document.all["a3"].style.display="none";
+  document.all["a4"].style.display="none";
+  document.all["a5"].style.display="none";
+  }
+  if(key==3){
+  document.all["a1"].style.display="none";
+  document.all["a2"].style.display="none";
+  document.all["a3"].style.display="block";
+  document.all["a4"].style.display="none";
+  document.all["a5"].style.display="none";
+  }
+    if(key==4){
+  document.all["a1"].style.display="none";
+  document.all["a2"].style.display="none";
+  document.all["a3"].style.display="none";
+  document.all["a4"].style.display="block";
+  document.all["a5"].style.display="none";
+  }
+    if(key==5){
+  document.all["a1"].style.display="none";
+  document.all["a2"].style.display="none";
+  document.all["a3"].style.display="none";
+  document.all["a4"].style.display="none";
+  document.all["a5"].style.display="block";
+  }
+  }
+
+    </script>
+
+</head>
+<body>
+
+
+<h1 style="color:black; font-size:50px"><a href="http://127.0.0.1:5000">Pass Master</a></h1>
+
+<div class="tabbed round">
+
+</div>
+<div style="height:70%">
+    <div class="part_1" style="display:inline-block">
+
+        <h5 style="display:inline;">1. 감성 분석 </h5>
+
+        <!-- Main Start -->
+        <div id="container">
+            <h2 style="color:black; margin-bottom:0px; margin-top:5%;">자기소개</h2>
+
+              {% if(pos_rate_list[0] == -1) %}
+            <div class="t1"
+                 style="background-color:#8FE846; float:left; height:25px; width:100%; text-align:center;border-top-left-radius:20px; border-bottom-left-radius:20px; border-top-right-radius:20px; border-bottom-right-radius:20px">
+                <h4 style="color:black; margin-top : 0px; margin-bottom : 0px"> 0% </h4>
+            </div>
+
+
+            {% elif(pos_rate_list[0] == 100) %}
+            <div class="t1"
+                 style="background-color:#00BFFF; float:left; height:25px; width:{{ pos_rate_list[0] }}%; text-align:center;border-top-left-radius:20px; border-bottom-left-radius:20px; border-top-right-radius:20px; border-bottom-right-radius:20px">
+                <h4 style="color:black; margin-top : 0px; margin-bottom : 0px" class="tt"> {{ pos_rate_list[0] }}%  <span class = "tt-text"> 긍정으로 사용된 단어 <br> {{ pos_all_list[0] }}   </span>  </h4>
+            </div>
+
+            {% elif(neg_rate_list[0] == 100) %}
+            <div class="t2"
+                 style="background-color:#9370DB; float:right; height:25px;  width:{{ neg_rate_list[0] }}%; text-align:center;border-top-right-radius:20px; border-bottom-right-radius:20px; border-top-left-radius:20px; border-bottom-left-radius:20px">
+                <h4 style="color:black; margin-top : 0px; margin-bottom : 0px" class="tt"> {{ neg_rate_list[0] }}% <span class = "tt-text"> 부정으로 사용된 단어 <br> {{ neg_all_list[0] }} </span> </h4>
+            </div>
+
+
+            {%  else  %}
+
+            <div class="t1"
+                 style="background-color:#00BFFF; float:left; height:25px; width:{{ pos_rate_list[0] }}%; text-align:center;border-top-left-radius:20px; border-bottom-left-radius:20px">
+                <h4 style="color:black; margin-top : 0px; margin-bottom : 0px" class="tt"> {{ pos_rate_list[0] }}%  <span class = "tt-text"> 긍정으로 사용된 단어 <br> {{ pos_all_list[0] }}   </span>  </h4>
+            </div>
+            <div class="t2"
+                 style="background-color:#9370DB; float:right; height:25px;  width:{{ neg_rate_list[0] }}%; text-align:center;border-top-right-radius:20px; border-bottom-right-radius:20px">
+                <h4 style="color:black; margin-top : 0px; margin-bottom : 0px" class="tt"> {{ neg_rate_list[0] }}% <span class = "tt-text"> 부정으로 사용된 단어 <br> {{ neg_all_list[0] }} </span> </h4>
+            </div>
+
+            {% endif %}
+        </div>
+        <br>
+
+
+        <div id="container2">
+            <h2 style="color:black; margin-bottom:0px; margin-top:5%;">지원동기</h2>
+
+
+            {% if(pos_rate_list[1] == -1) %}
+            <div class="t1"
+                 style="background-color:#8FE846; float:left; height:25px; width:100%; text-align:center;border-top-left-radius:20px; border-bottom-left-radius:20px; border-top-right-radius:20px; border-bottom-right-radius:20px">
+                <h4 style="color:black; margin-top : 0px; margin-bottom : 0px"> 0% </h4>
+            </div>
+
+            {% elif(pos_rate_list[1] == 100) %}
+            <div class="t1"
+                 style="background-color:#00BFFF; float:left; height:25px; width:{{ pos_rate_list[1] }}%; text-align:center;border-top-left-radius:20px; border-bottom-left-radius:20px; border-top-right-radius:20px; border-bottom-right-radius:20px">
+                <h4 style="color:black; margin-top : 0px; margin-bottom : 0px" class="tt"> {{ pos_rate_list[1] }}%  <span class = "tt-text"> 긍정으로 사용된 단어 <br> {{ pos_all_list[1] }}   </span>  </h4>
+            </div>
+
+            {% elif(neg_rate_list[1] == 100) %}
+            <div class="t2"
+                 style="background-color:#9370DB; float:right; height:25px;  width:{{ neg_rate_list[1] }}%; text-align:center;border-top-right-radius:20px; border-bottom-right-radius:20px; border-top-left-radius:20px; border-bottom-left-radius:20px">
+                <h4 style="color:black; margin-top : 0px; margin-bottom : 0px" class="tt"> {{ neg_rate_list[1] }}% <span class = "tt-text"> 부정으로 사용된 단어 <br> {{ neg_all_list[1] }} </span> </h4>
+            </div>
+
+
+
+
+
+            {%  else  %}
+
+            <div class="t1"
+                 style="background-color:#00BFFF; float:left; height:25px; width:{{ pos_rate_list[1] }}%; text-align:center;border-top-left-radius:20px; border-bottom-left-radius:20px">
+                <h4 style="color:black; margin-top : 0px; margin-bottom : 0px" class="tt"> {{ pos_rate_list[1] }}%  <span class = "tt-text"> 긍정으로 사용된 단어 <br>{{ pos_all_list[1] }}</span>  </h4>
+            </div>
+            <div class="t2"
+                 style="background-color:#9370DB; float:right; height:25px;  width:{{ neg_rate_list[1] }}%; text-align:center;border-top-right-radius:20px; border-bottom-right-radius:20px">
+                <h4 style="color:black; margin-top : 0px; margin-bottom : 0px" class="tt"> {{ neg_rate_list[1] }}% <span class = "tt-text"> 부정으로 사용된 단어 <br>{{ neg_all_list[1] }}</span> </h4>
+            </div>
+
+            {% endif %}
+        </div>
+        <br>
+
+        <div id="container3">
+            <h2 style="color:black; margin-bottom:0px; margin-top:5%;">최근이슈</h2>
+            {% if(pos_rate_list[2] == -1) %}
+            <div class="t1"
+                 style="background-color:#8FE846; float:left; height:25px; width:100%; text-align:center;border-top-left-radius:20px; border-bottom-left-radius:20px; border-top-right-radius:20px; border-bottom-right-radius:20px">
+                <h4 style="color:black; margin-top : 0px; margin-bottom : 0px"> 0% </h4>
+            </div>
+
+
+            {% elif(pos_rate_list[2] == 100) %}
+            <div class="t1"
+                 style="background-color:#00BFFF; float:left; height:25px; width:{{ pos_rate_list[2] }}%; text-align:center;border-top-left-radius:20px; border-bottom-left-radius:20px; border-top-right-radius:20px; border-bottom-right-radius:20px">
+                <h4 style="color:black; margin-top : 0px; margin-bottom : 0px" class="tt"> {{ pos_rate_list[2] }}%  <span class = "tt-text"> 긍정으로 사용된 단어 <br> {{ pos_all_list[2] }}   </span>  </h4>
+            </div>
+
+
+            {% elif(neg_rate_list[2] == 100) %}
+            <div class="t2"
+                 style="background-color:#9370DB; float:right; height:25px;  width:{{ neg_rate_list[2] }}%; text-align:center;border-top-right-radius:20px; border-bottom-right-radius:20px; border-top-left-radius:20px; border-bottom-left-radius:20px">
+                <h4 style="color:black; margin-top : 0px; margin-bottom : 0px" class="tt"> {{ neg_rate_list[2] }}% <span class = "tt-text"> 부정으로 사용된 단어 <br> {{ neg_all_list[2] }} </span> </h4>
+            </div>
+
+
+            {%  else  %}
+
+            <div class="t1"
+                 style="background-color:#00BFFF; float:left; height:25px; width:{{ pos_rate_list[2] }}%; text-align:center;border-top-left-radius:20px; border-bottom-left-radius:20px">
+                <h4 style="color:black; margin-top : 0px; margin-bottom : 0px" class="tt"> {{ pos_rate_list[2] }}%  <span class = "tt-text"> 긍정으로 사용된 단어 <br> {{ pos_all_list[2] }}   </span>  </h4>
+            </div>
+            <div class="t2"
+                 style="background-color:#9370DB; float:right; height:25px;  width:{{ neg_rate_list[2] }}%; text-align:center;border-top-right-radius:20px; border-bottom-right-radius:20px">
+                <h4 style="color:black; margin-top : 0px; margin-bottom : 0px" class="tt"> {{ neg_rate_list[2] }}% <span class = "tt-text"> 부정으로 사용된 단어 <br> {{ neg_all_list[2] }} </span> </h4>
+            </div>
+
+            {% endif %}
+        </div>
+        <br>
+
+        <div id="container4">
+            <h2 style="color:black; margin-bottom:0px; margin-top:5%;">기출질문1</h2>
+            {% if(pos_rate_list[3] == -1) %}
+            <div class="t1"
+                 style="background-color:#8FE846; float:left; height:25px; width:100%; text-align:center;border-top-left-radius:20px; border-bottom-left-radius:20px; border-top-right-radius:20px; border-bottom-right-radius:20px">
+                <h4 style="color:black; margin-top : 0px; margin-bottom : 0px"> 0% </h4>
+            </div>
+
+            {% elif(pos_rate_list[3] == 100) %}
+            <div class="t1"
+                 style="background-color:#00BFFF; float:left; height:25px; width:{{ pos_rate_list[3] }}%; text-align:center;border-top-left-radius:20px; border-bottom-left-radius:20px; border-top-right-radius:20px; border-bottom-right-radius:20px">
+                <h4 style="color:black; margin-top : 0px; margin-bottom : 0px" class="tt"> {{ pos_rate_list[3] }}%  <span class = "tt-text"> 긍정으로 사용된 단어 <br> {{ pos_all_list[3] }}   </span>  </h4>
+            </div>
+
+
+            {% elif(neg_rate_list[3] == 100) %}
+            <div class="t2"
+                 style="background-color:#9370DB; float:right; height:25px;  width:{{ neg_rate_list[3] }}%; text-align:center;border-top-right-radius:20px; border-bottom-right-radius:20px; border-top-left-radius:20px; border-bottom-left-radius:20px">
+                <h4 style="color:black; margin-top : 0px; margin-bottom : 0px" class="tt"> {{ neg_rate_list[3] }}% <span class = "tt-text"> 부정으로 사용된 단어 <br> {{ neg_all_list[3] }} </span> </h4>
+            </div>
+
+
+            {%  else  %}
+
+            <div class="t1"
+                 style="background-color:#00BFFF; float:left; height:25px; width:{{ pos_rate_list[3] }}%; text-align:center;border-top-left-radius:20px; border-bottom-left-radius:20px">
+                <h4 style="color:black; margin-top : 0px; margin-bottom : 0px" class="tt"> {{ pos_rate_list[3] }}%  <span class = "tt-text"> 긍정으로 사용된 단어 <br> {{ pos_all_list[3] }}   </span>  </h4>
+            </div>
+            <div class="t2"
+                 style="background-color:#9370DB; float:right; height:25px;  width:{{ neg_rate_list[3] }}%; text-align:center;border-top-right-radius:20px; border-bottom-right-radius:20px">
+                <h4 style="color:black; margin-top : 0px; margin-bottom : 0px" class="tt"> {{ neg_rate_list[3] }}% <span class = "tt-text"> 부정으로 사용된 단어 <br> {{ neg_all_list[3] }} </span> </h4>
+            </div>
+
+            {% endif %}
+        </div>
+        <br>
+        <div id="container5">
+            <h2 style="color:black; margin-bottom:0px; margin-top:5%;">기출질문2</h2>
+           {% if(pos_rate_list[4] == -1) %}
+            <div class="t1"
+                 style="background-color:#8FE846; float:left; height:25px; width:100%; text-align:center;border-top-left-radius:20px; border-bottom-left-radius:20px; border-top-right-radius:20px; border-bottom-right-radius:20px">
+                <h4 style="color:black; margin-top : 0px; margin-bottom : 0px"> 0% </h4>
+            </div>
+
+
+
+            {% elif(pos_rate_list[4] == 100) %}
+            <div class="t1"
+                 style="background-color:#00BFFF; float:left; height:25px; width:{{ pos_rate_list[4] }}%; text-align:center;border-top-left-radius:20px; border-bottom-left-radius:20px; border-top-right-radius:20px; border-bottom-right-radius:20px">
+                <h4 style="color:black; margin-top : 0px; margin-bottom : 0px" class="tt"> {{ pos_rate_list[4] }}%  <span class = "tt-text"> 긍정으로 사용된 단어 <br> {{ pos_all_list[4] }}   </span>  </h4>
+            </div>
+
+            {% elif(neg_rate_list[4] == 100) %}
+            <div class="t2"
+                 style="background-color:#9370DB; float:right; height:25px;  width:{{ neg_rate_list[0] }}%; text-align:center;border-top-right-radius:20px; border-bottom-right-radius:20px; border-top-left-radius:20px; border-bottom-left-radius:20px">
+                <h4 style="color:black; margin-top : 0px; margin-bottom : 0px" class="tt"> {{ neg_rate_list[4] }}% <span class = "tt-text"> 부정으로 사용된 단어 <br> {{ neg_all_list[4] }} </span> </h4>
+            </div>
+            {%  else  %}
+
+            <div class="t1"
+                 style="background-color:#00BFFF; float:left; height:25px; width:{{ pos_rate_list[4] }}%; text-align:center;border-top-left-radius:20px; border-bottom-left-radius:20px">
+                <h4 style="color:black; margin-top : 0px; margin-bottom : 0px" class="tt"> {{ pos_rate_list[4] }}%  <span class = "tt-text"> 긍정으로 사용된 단어 <br> {{ pos_all_list[4] }}   </span>  </h4>
+            </div>
+            <div class="t2"
+                 style="background-color:#9370DB; float:right; height:25px;  width:{{ neg_rate_list[4] }}%; text-align:center;border-top-right-radius:20px; border-bottom-right-radius:20px">
+                <h4 style="color:black; margin-top : 0px; margin-bottom : 0px" class="tt"> {{ neg_rate_list[4] }}% <span class = "tt-text"> 부정으로 사용된 단어 <br> {{ neg_all_list[4] }} </span> </h4>
+            </div>
+
+            {% endif %}
+        </div>
+        <br>
+        <!-- Main End -->
+
+
+    </div>
+
+       <div class="part_2" style="display:inline-block">
+        <h5 style="display:inline;">2. 표현 분석 </h5><br><br>
+
+        <ul id="tabs">
+            <li><a href="#" name="tab1" style="padding-left:35px; padding-right:35px;">자기소개</a></li>
+            <li><a href="#" name="tab2" style="padding-left:35px; padding-right:35px;">지원동기</a></li>
+            <li><a href="#" name="tab3" style="padding-left:35px; padding-right:35px;">최근이슈</a></li>
+            <li><a href="#" name="tab4" style="padding-left:35px; padding-right:35px;">기출질문1</a></li>
+            <li><a href="#" name="tab5" style="padding-left:35px; padding-right:35px;">기출질문2</a></li>
+        </ul>
+
+        <div id="content" style="padding-right:0ox; width:88%;">
+            <div id="tab1">
+                <h3 style="color:black">
+                    {% for r in result_list[0] %}
+                        {{ r }} <br><br>
+                    {% endfor %}
+                    <br> <hr color="#00BFFF" width="100%"> <h3 style="color:black" class="tt"> 내가 무슨말을 했더라...  <span class="tt-text2"> {{ print_text[0] }} </span> </h3>  </h3>
+            </div>
+            <div id="tab2">
+                <h3 style="color:black">
+                    {% for r in result_list[1] %}
+                        {{ r }} <br><br>
+                    {% endfor %}
+                    <br> <hr color="#00BFFF" width="100%"> <h3 style="color:black" class="tt"> 내가 무슨말을 했더라...  <span class="tt-text2"> {{ print_text[1] }} </span> </h3>  </h3>
+            </div>
+
+            <div id="tab3">
+               <h3 style="color:black">
+                   {% for r in result_list[2] %}
+                        {{ r }} <br><br>
+                    {% endfor %}
+                   <br> <hr color="#00BFFF" width="100%"> <h3 style="color:black" class="tt"> 내가 무슨말을 했더라...  <span class="tt-text2"> {{ print_text[2] }} </span> </h3>  </h3>
+            </div>
+            <div id="tab4">
+                <h3 style="color:black">
+                    {% for r in result_list[3] %}
+                        {{ r }} <br><br>
+                    {% endfor %}
+                    <br> <hr color="#00BFFF" width="100%"> <h3 style="color:black" class="tt"> 내가 무슨말을 했더라...  <span class="tt-text2"> {{ print_text[3] }} </span> </h3>  </h3>
+            </div>
+            <div id="tab5">
+                <h3 style="color:black">
+                    {% for r in result_list[4] %}
+                        {{ r }} <br><br>
+                    {% endfor %}
+                    <br> <hr color="#00BFFF" width="100%"> <h3 style="color:black" class="tt"> 내가 무슨말을 했더라...  <span class="tt-text2"> {{ print_text[4] }} </span> </h3>  </h3>
+            </div>
+        </div>
+
+        <h3 style="color:black;"> ▶ 실제 AI면접에서는 긍정적 단어를 많이 사용하시는것이 좋습니다</h3>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>
+$(document).ready(function() {
+    $("#content").find("[id^='tab']").hide(); // Hide all content
+    $("#tabs li:first").attr("id","current"); // Activate the first tab
+    $("#content #tab1").fadeIn(); // Show first tab's content
+
+    $('#tabs a').click(function(e) {
+        e.preventDefault();
+        if ($(this).closest("li").attr("id") == "current"){ //detection for current tab
+         return;
+        }
+        else{
+          $("#content").find("[id^='tab']").hide(); // Hide all content
+          $("#tabs li").attr("id",""); //Reset id's
+          $(this).parent().attr("id","current"); // Activate this
+          $('#' + $(this).attr('name')).fadeIn(); // Show content for the current tab
+        }
+    });
+});
+
+    </script>
+
+
+</div>
+
+</div>
+</div>
+<br>
+
+
+<div style="height:70%">
+    <div class="part_3" style="display:inline-block">
+        <br>
+        <h5 style="display:inline">3. 말 속도 분석 <br></h5>
+        <div style="color:black;">LPM(분당 입력 글자 수)</div>
+        <br>
+
+
+        <div id="d1" style="display:block">
+            <!-- 초기로딩시 보임상태 -->
+            <h3 style="color:black; display:inline;"> ▶ 자기소개
+                <span style="font-size: 25px; color:black; display:inline-block; margin-top:2%; margin-bottom:0px;"> : {{ lpm_list[0] }} </span>
+            </h3>
+        </div>
+        <br>
+        <div id="d2" style="display:block">
+            <!-- 숨김상태 -->
+            <h3 style="color:black; display:inline;"> ▶ 지원동기
+                <span style="font-size: 25px; color:black; display:inline-block; margin-top:2%; margin-bottom:0px;"> : {{ lpm_list[1] }} </span>
+            </h3>
+
+        </div>
+        <br>
+
+        <div id="d3" style="display:block">
+            <!-- 숨김상태 -->
+
+            <h3 style="color:black; display:inline;"> ▶ 최근이슈
+                <span style="font-size: 25px; color:black; display:inline-block; margin-top:2%; margin-bottom:0px;"> : {{ lpm_list[2] }} </span>
+            </h3>
+
+        </div>
+        <br>
+
+        <div id="d4" style="display:block">
+            <!-- 숨김상태 -->
+            <h3 style="color:black; display:inline;"> ▶ 기출질문1
+                <span style="font-size: 25px; color:black; display:inline-block; margin-top:2%; margin-bottom:0px;"> :  {{ lpm_list[3] }}</span>
+            </h3>
+
+        </div>
+        <br>
+        <div id="d5" style="display:block">
+            <!-- 숨김상태 -->
+            <h3 style="color:black; display:inline;"> ▶ 기출질문2
+                <span style="font-size: 25px; color:black; display:inline-block; margin-top:2%; margin-bottom:0px;"> : {{ lpm_list[4] }}</span>
+            </h3>
+
+        </div>
+        <div>
+            <br>
+            <h3 style="color:black"> ▶1분에 270자를 읽는 것이 <br> 청중을 이해시키는데 가장 좋은 속도입니다 :)</h3> <br>
+        </div>
+    </div>
+
+
+    <div class="part_4" style="display:inline-block">
+        <h5 style="color:black; display:inline">4. 시선 처리 </h5><br><br>
+
+
+        <ul id="tabs2">
+            <li name="li6"><a href="#" name="tab6" style="padding-left:35px; padding-right:35px;">자기소개</a></li>
+            <li name="li7"><a href="#" name="tab7" style="padding-left:35px; padding-right:35px;">지원동기</a></li>
+            <li name="li8"><a href="#" name="tab8" style="padding-left:35px; padding-right:35px;">최근이슈</a></li>
+            <li name="li9"><a href="#" name="tab9" style="padding-left:35px; padding-right:35px;">기출질문1</a></li>
+            <li name="li10"><a href="#" name="tab10" style="padding-left:35px; padding-right:35px;">기출질문2</a></li>
+        </ul>
+
+        <div id="content2" style="padding-right:0ox; width:88%;">
+
+
+<div class="wrapper" id="tab6">
+  <canvas id='c' style="width:100%; height:100%"></canvas>
+  <div class="label">text</div>
+</div>
+
+
+<div class="wrapper" id="tab7">
+  <canvas id='d' style="width:100%; height:100%"></canvas>
+  <div class="label">text</div>
+</div>
+
+<div class="wrapper" id="tab8">
+  <canvas id='e' style="width:100%; height:100%"></canvas>
+  <div class="label">text</div>
+</div>
+
+ <div class="wrapper" id="tab9" >
+  <canvas id='f' style="width:100%; height:100%"></canvas>
+  <div class="label">text</div>
+</div>
+
+ <div class="wrapper" id="tab10">
+  <canvas id='g' style="width:100%; height:100%"></canvas>
+  <div class="label">text</div>
+</div>
+    </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>
+$(document).ready(function() {
+    $("#content2").find("[id^='tab']").hide(); // Hide all content
+    $("#tabs2 li:first").attr("id","current"); // Activate the first tab
+    $("#content2 #tab6").fadeIn(); // Show first tab's content
+
+
+    var label = document.querySelector(".label");
+var c = document.getElementById("c");
+var ctx = c.getContext("2d");
+var cw = c.width = 700;
+var ch = c.height = 350;
+var cx = cw / 2,
+  cy = ch / 2;
+var rad = Math.PI / 180;
+var frames = 0;
+
+ctx.lineWidth = 1;
+ctx.strokeStyle = "#000080";
+ctx.fillStyle = "000080";
+ctx.font = "14px monospace";
+
+var grd = ctx.createLinearGradient(0, 0, 0, cy);
+grd.addColorStop(0, "hsla(167,72%,60%,1)");
+grd.addColorStop(1, "hsla(167,72%,60%,0)");
+
+var oData = new Object();
+
+
+
+
+{% for i in range(length[0]) %}
+    console.log({{ axis_x[0][i] }})
+    oData[ {{ axis_x[0][i] }} ] = {{ gaze_list[0][i] }};
+ {% endfor %}
+
+
+
+
+
+var valuesRy = [];
+var propsRy = [];
+for (var prop in oData) {
+
+  valuesRy.push(oData[prop]);
+  propsRy.push(prop);
+
+
+}
+
+
+
+var vData = 4;
+var hData = valuesRy.length;
+var offset = 50.5; //offset chart axis
+var chartHeight = ch - 2 * offset;
+var chartWidth = cw - 2 * offset;
+var t = 1 / 7; // curvature : 0 = no curvature
+var speed = 2; // for the animation
+
+var A = {
+  x: offset,
+  y: offset
+}
+var B = {
+  x: offset,
+  y: offset + chartHeight
+}
+var C = {
+  x: offset + chartWidth,
+  y: offset + chartHeight
+}
+
+/*
+      A  ^
+       |  |
+       + 25
+       |
+       |
+       |
+       + 25
+      |__|_________________________________  C
+      B
+*/
+
+// CHART AXIS -------------------------
+ctx.beginPath();
+ctx.moveTo(A.x, A.y);
+ctx.lineTo(B.x, B.y);
+ctx.lineTo(C.x, C.y);
+ctx.stroke();
+
+// vertical ( A - B )
+var aStep = (chartHeight - 50) / (vData);
+
+var Max = Math.ceil(arrayMax(valuesRy) / 10) * 10;
+var Min = Math.floor(arrayMin(valuesRy) / 10) * 10;
+var aStepValue = (Max - Min) / (vData);
+console.log("aStepValue: " + aStepValue); //8 units
+var verticalUnit = aStep / aStepValue;
+
+var a = [];
+ctx.textAlign = "right";
+ctx.textBaseline = "middle";
+for (var i = 0; i <= vData; i++) {
+
+  if (i == 0) {
+    a[i] = {
+      x: A.x,
+      y: A.y + 25,
+      val: Max
+    }
+  } else {
+    a[i] = {}
+    a[i].x = a[i - 1].x;
+    a[i].y = a[i - 1].y + aStep;
+    a[i].val = a[i - 1].val - aStepValue;
+  }
+  drawCoords(a[i], 3, 0);
+}
+
+//horizontal ( B - C )
+var b = [];
+ctx.textAlign = "center";
+ctx.textBaseline = "hanging";
+var bStep = chartWidth / (hData + 1);
+
+for (var i = 0; i < hData; i++) {
+  if (i == 0) {
+    b[i] = {
+      x: B.x + bStep,
+      y: B.y,
+      val: propsRy[0]
+    };
+  } else {
+    b[i] = {}
+    b[i].x = b[i - 1].x + bStep;
+    b[i].y = b[i - 1].y;
+    b[i].val = propsRy[i]
+  }
+  // drawCoords(b[i], 0, 3)
+}
+drawCoords(b[0], 0, 3)
+drawCoords(b[ {{ length[0] - 1 }} ], 0, 3)
+
+function drawCoords(o, offX, offY) {
+  ctx.beginPath();
+  ctx.moveTo(o.x - offX, o.y - offY);
+  ctx.lineTo(o.x + offX, o.y + offY);
+  ctx.stroke();
+
+  ctx.fillText(o.val, o.x - 2 * offX, o.y + 2 * offY);
+}
+//----------------------------------------------------------
+
+// DATA
+var oDots = [];
+var oFlat = [];
+var i = 0;
+
+for (var prop in oData) {
+  oDots[i] = {}
+  oFlat[i] = {}
+
+  oDots[i].x = b[i].x;
+  oFlat[i].x = b[i].x;
+
+  oDots[i].y = b[i].y - oData[prop] * verticalUnit - 25;
+  oFlat[i].y = b[i].y - 25;
+
+  oDots[i].val = oData[b[i].val];
+
+  i++
+}
+
+
+
+///// Animation Chart ///////////////////////////
+//var speed = 3;
+function animateChart() {
+  requestId = window.requestAnimationFrame(animateChart);
+  frames += speed; //console.log(frames)
+  ctx.clearRect(60, 0, cw, ch - 60);
+
+  for (var i = 0; i < oFlat.length; i++) {
+    if (oFlat[i].y > oDots[i].y) {
+      oFlat[i].y -= speed;
+    }
+  }
+  drawCurve(oFlat);
+  // for (var i = 0; i < oFlat.length; i++) {
+  //     ctx.fillText(oDots[i].val, oFlat[i].x, oFlat[i].y - 25);
+  //     ctx.beginPath();
+  //     ctx.arc(oFlat[i].x, oFlat[i].y, 3, 0, 2 * Math.PI);
+  //     ctx.fill();
+  //   }
+
+  if (frames >= Max * verticalUnit) {
+    window.cancelAnimationFrame(requestId);
+
+  }
+}
+requestId = window.requestAnimationFrame(animateChart);
+
+/////// EVENTS //////////////////////
+c.addEventListener("mousemove", function(e) {
+  label.innerHTML = "";
+  label.style.display = "none";
+  this.style.cursor = "default";
+
+  var m = oMousePos(this, e);
+  for (var i = 0; i < oDots.length; i++) {
+
+    output(m, i);
+  }
+
+}, false);
+
+function output(m, i) {
+  ctx.beginPath();
+  ctx.arc(oDots[i].x, oDots[i].y, 20, 0, 2 * Math.PI);
+  if (ctx.isPointInPath(m.x, m.y)) {
+    //console.log(i);
+    label.style.display = "block";
+    label.style.top = (m.y + 10) + "px";
+    label.style.left = (m.x + 10) + "px";
+    label.innerHTML = "<strong>" + propsRy[i] + "</strong>: " + valuesRy[i] + "%";
+    c.style.cursor = "pointer";
+  }
+}
+
+// CURVATURE
+function controlPoints(p) {
+  // given the points array p calculate the control points
+  var pc = [];
+  for (var i = 1; i < p.length - 1; i++) {
+    var dx = p[i - 1].x - p[i + 1].x; // difference x
+    var dy = p[i - 1].y - p[i + 1].y; // difference y
+    // the first control point
+    var x1 = p[i].x - dx * t;
+    var y1 = p[i].y - dy * t;
+    var o1 = {
+      x: x1,
+      y: y1
+    };
+
+    // the second control point
+    var x2 = p[i].x + dx * t;
+    var y2 = p[i].y + dy * t;
+    var o2 = {
+      x: x2,
+      y: y2
+    };
+
+    // building the control points array
+    pc[i] = [];
+    pc[i].push(o1);
+    pc[i].push(o2);
+  }
+  return pc;
+}
+
+function drawCurve(p) {
+
+  var pc = controlPoints(p); // the control points array
+
+  ctx.beginPath();
+  //ctx.moveTo(p[0].x, B.y- 25);
+  ctx.lineTo(p[0].x, p[0].y);
+  // the first & the last curve are quadratic Bezier
+  // because I'm using push(), pc[i][1] comes before pc[i][0]
+  ctx.quadraticCurveTo(pc[1][1].x, pc[1][1].y, p[1].x, p[1].y);
+
+  if (p.length > 2) {
+    // central curves are cubic Bezier
+    for (var i = 1; i < p.length - 2; i++) {
+      ctx.bezierCurveTo(pc[i][0].x, pc[i][0].y, pc[i + 1][1].x, pc[i + 1][1].y, p[i + 1].x, p[i + 1].y);
+    }
+    // the first & the last curve are quadratic Bezier
+    var n = p.length - 1;
+    ctx.quadraticCurveTo(pc[n - 1][0].x, pc[n - 1][0].y, p[n].x, p[n].y);
+  }
+
+  //ctx.lineTo(p[p.length-1].x, B.y- 25);
+  ctx.stroke();
+  ctx.save();
+  ctx.fillStyle = grd;
+  ctx.fill();
+  ctx.restore();
+}
+
+function arrayMax(array) {
+  return Math.max.apply(Math, array);
+};
+
+function arrayMin(array) {
+  return Math.min.apply(Math, array);
+};
+
+function oMousePos(canvas, evt) {
+  var ClientRect = canvas.getBoundingClientRect();
+  return { //objeto
+    x: Math.round(evt.clientX - ClientRect.left),
+    y: Math.round(evt.clientY - ClientRect.top)
+  }
+}
+
+
+
+
+
+
+    // end ready
+
+    $('#tabs2 a').click(function(e) {
+        e.preventDefault();
+        if ($(this).closest("li").attr("id") == "current"){ //detection for current tab
+         return;
+        }
+        else{
+
+
+          $("#content2").find("[id^='tab']").hide(); // Hide all content
+          $("#tabs2 li").attr("id",""); //Reset id's
+          $(this).parent().attr("id","current"); // Activate this
+          $('#' + $(this).attr('name')).fadeIn(); // Show content for the current tab
+
+
+
+
+        if ($(this).closest("li").attr("name") == "li6") {
+
+
+
+var label = document.querySelector(".label");
+var c = document.getElementById("c");
+var ctx = c.getContext("2d");
+var cw = c.width = 700;
+var ch = c.height = 350;
+var cx = cw / 2,
+  cy = ch / 2;
+var rad = Math.PI / 180;
+var frames = 0;
+
+ctx.lineWidth = 1;
+ctx.strokeStyle = "#000080";
+ctx.fillStyle = "000080";
+ctx.font = "14px monospace";
+
+var grd = ctx.createLinearGradient(0, 0, 0, cy);
+grd.addColorStop(0, "hsla(167,72%,60%,1)");
+grd.addColorStop(1, "hsla(167,72%,60%,0)");
+
+var oData = new Object();
+
+{% for i in range(length[0]) %}
+    oData[ {{ axis_x[0][i] }} ] = {{ gaze_list[0][i] }};
+ {% endfor %}
+
+var valuesRy = [];
+var propsRy = [];
+for (var prop in oData) {
+
+  valuesRy.push(oData[prop]);
+  propsRy.push(prop);
+
+
+}
+
+
+
+var vData = 4;
+var hData = valuesRy.length;
+var offset = 50.5; //offset chart axis
+var chartHeight = ch - 2 * offset;
+var chartWidth = cw - 2 * offset;
+var t = 1 / 7; // curvature : 0 = no curvature
+var speed = 2; // for the animation
+
+var A = {
+  x: offset,
+  y: offset
+}
+var B = {
+  x: offset,
+  y: offset + chartHeight
+}
+var C = {
+  x: offset + chartWidth,
+  y: offset + chartHeight
+}
+
+/*
+      A  ^
+       |  |
+       + 25
+       |
+       |
+       |
+       + 25
+      |__|_________________________________  C
+      B
+*/
+
+// CHART AXIS -------------------------
+ctx.beginPath();
+ctx.moveTo(A.x, A.y);
+ctx.lineTo(B.x, B.y);
+ctx.lineTo(C.x, C.y);
+ctx.stroke();
+
+// vertical ( A - B )
+var aStep = (chartHeight - 50) / (vData);
+
+var Max = Math.ceil(arrayMax(valuesRy) / 10) * 10;
+var Min = Math.floor(arrayMin(valuesRy) / 10) * 10;
+var aStepValue = (Max - Min) / (vData);
+console.log("aStepValue: " + aStepValue); //8 units
+var verticalUnit = aStep / aStepValue;
+
+var a = [];
+ctx.textAlign = "right";
+ctx.textBaseline = "middle";
+for (var i = 0; i <= vData; i++) {
+
+  if (i == 0) {
+    a[i] = {
+      x: A.x,
+      y: A.y + 25,
+      val: Max
+    }
+  } else {
+    a[i] = {}
+    a[i].x = a[i - 1].x;
+    a[i].y = a[i - 1].y + aStep;
+    a[i].val = a[i - 1].val - aStepValue;
+  }
+  drawCoords(a[i], 3, 0);
+}
+
+//horizontal ( B - C )
+var b = [];
+ctx.textAlign = "center";
+ctx.textBaseline = "hanging";
+var bStep = chartWidth / (hData + 1);
+
+for (var i = 0; i < hData; i++) {
+  if (i == 0) {
+    b[i] = {
+      x: B.x + bStep,
+      y: B.y,
+      val: propsRy[0]
+    };
+  } else {
+    b[i] = {}
+    b[i].x = b[i - 1].x + bStep;
+    b[i].y = b[i - 1].y;
+    b[i].val = propsRy[i]
+  }
+  // drawCoords(b[i], 0, 3)
+}
+drawCoords(b[0], 0, 3)
+drawCoords(b[ {{ length[0] - 1 }} ], 0, 3)
+
+function drawCoords(o, offX, offY) {
+  ctx.beginPath();
+  ctx.moveTo(o.x - offX, o.y - offY);
+  ctx.lineTo(o.x + offX, o.y + offY);
+  ctx.stroke();
+
+  ctx.fillText(o.val, o.x - 2 * offX, o.y + 2 * offY);
+}
+//----------------------------------------------------------
+
+// DATA
+var oDots = [];
+var oFlat = [];
+var i = 0;
+
+for (var prop in oData) {
+  oDots[i] = {}
+  oFlat[i] = {}
+
+  oDots[i].x = b[i].x;
+  oFlat[i].x = b[i].x;
+
+  oDots[i].y = b[i].y - oData[prop] * verticalUnit - 25;
+  oFlat[i].y = b[i].y - 25;
+
+  oDots[i].val = oData[b[i].val];
+
+  i++
+}
+
+
+
+///// Animation Chart ///////////////////////////
+//var speed = 3;
+function animateChart() {
+  requestId = window.requestAnimationFrame(animateChart);
+  frames += speed; //console.log(frames)
+  ctx.clearRect(60, 0, cw, ch - 60);
+
+  for (var i = 0; i < oFlat.length; i++) {
+    if (oFlat[i].y > oDots[i].y) {
+      oFlat[i].y -= speed;
+    }
+  }
+  drawCurve(oFlat);
+  // for (var i = 0; i < oFlat.length; i++) {
+  //     ctx.fillText(oDots[i].val, oFlat[i].x, oFlat[i].y - 25);
+  //     ctx.beginPath();
+  //     ctx.arc(oFlat[i].x, oFlat[i].y, 3, 0, 2 * Math.PI);
+  //     ctx.fill();
+  //   }
+
+  if (frames >= Max * verticalUnit) {
+    window.cancelAnimationFrame(requestId);
+
+  }
+}
+requestId = window.requestAnimationFrame(animateChart);
+
+/////// EVENTS //////////////////////
+c.addEventListener("mousemove", function(e) {
+  label.innerHTML = "";
+  label.style.display = "none";
+  this.style.cursor = "default";
+
+  var m = oMousePos(this, e);
+  for (var i = 0; i < oDots.length; i++) {
+
+    output(m, i);
+  }
+
+}, false);
+
+function output(m, i) {
+  ctx.beginPath();
+  ctx.arc(oDots[i].x, oDots[i].y, 20, 0, 2 * Math.PI);
+  if (ctx.isPointInPath(m.x, m.y)) {
+    //console.log(i);
+    label.style.display = "block";
+    label.style.top = (m.y + 10) + "px";
+    label.style.left = (m.x + 10) + "px";
+    label.innerHTML = "<strong>" + propsRy[i] + "</strong>: " + valuesRy[i] + "%";
+    c.style.cursor = "pointer";
+  }
+}
+
+// CURVATURE
+function controlPoints(p) {
+  // given the points array p calculate the control points
+  var pc = [];
+  for (var i = 1; i < p.length - 1; i++) {
+    var dx = p[i - 1].x - p[i + 1].x; // difference x
+    var dy = p[i - 1].y - p[i + 1].y; // difference y
+    // the first control point
+    var x1 = p[i].x - dx * t;
+    var y1 = p[i].y - dy * t;
+    var o1 = {
+      x: x1,
+      y: y1
+    };
+
+    // the second control point
+    var x2 = p[i].x + dx * t;
+    var y2 = p[i].y + dy * t;
+    var o2 = {
+      x: x2,
+      y: y2
+    };
+
+    // building the control points array
+    pc[i] = [];
+    pc[i].push(o1);
+    pc[i].push(o2);
+  }
+  return pc;
+}
+
+function drawCurve(p) {
+
+  var pc = controlPoints(p); // the control points array
+
+  ctx.beginPath();
+  //ctx.moveTo(p[0].x, B.y- 25);
+  ctx.lineTo(p[0].x, p[0].y);
+  // the first & the last curve are quadratic Bezier
+  // because I'm using push(), pc[i][1] comes before pc[i][0]
+  ctx.quadraticCurveTo(pc[1][1].x, pc[1][1].y, p[1].x, p[1].y);
+
+  if (p.length > 2) {
+    // central curves are cubic Bezier
+    for (var i = 1; i < p.length - 2; i++) {
+      ctx.bezierCurveTo(pc[i][0].x, pc[i][0].y, pc[i + 1][1].x, pc[i + 1][1].y, p[i + 1].x, p[i + 1].y);
+    }
+    // the first & the last curve are quadratic Bezier
+    var n = p.length - 1;
+    ctx.quadraticCurveTo(pc[n - 1][0].x, pc[n - 1][0].y, p[n].x, p[n].y);
+  }
+
+  //ctx.lineTo(p[p.length-1].x, B.y- 25);
+  ctx.stroke();
+  ctx.save();
+  ctx.fillStyle = grd;
+  ctx.fill();
+  ctx.restore();
+}
+
+function arrayMax(array) {
+  return Math.max.apply(Math, array);
+};
+
+function arrayMin(array) {
+  return Math.min.apply(Math, array);
+};
+
+function oMousePos(canvas, evt) {
+  var ClientRect = canvas.getBoundingClientRect();
+  return { //objeto
+    x: Math.round(evt.clientX - ClientRect.left),
+    y: Math.round(evt.clientY - ClientRect.top)
+  }
+}
+
+
+        } // end li6
+
+
+        if ($(this).closest("li").attr("name") == "li7") {
+
+
+var label = document.querySelector(".label");
+var c = document.getElementById("d");
+var ctx = c.getContext("2d");
+var cw = c.width = 700;
+var ch = c.height = 350;
+var cx = cw / 2,
+  cy = ch / 2;
+var rad = Math.PI / 180;
+var frames = 0;
+
+ctx.lineWidth = 1;
+ctx.strokeStyle = "#000080";
+ctx.fillStyle = "000080";
+ctx.font = "14px monospace";
+
+var grd = ctx.createLinearGradient(0, 0, 0, cy);
+grd.addColorStop(0, "hsla(167,72%,60%,1)");
+grd.addColorStop(1, "hsla(167,72%,60%,0)");
+
+var oData = new Object();
+
+{% for i in range(length[1]) %}
+    oData[ {{ axis_x[1][i] }} ] = {{ gaze_list[1][i] }};
+ {% endfor %}
+
+var valuesRy = [];
+var propsRy = [];
+for (var prop in oData) {
+
+  valuesRy.push(oData[prop]);
+  propsRy.push(prop);
+
+
+}
+
+
+
+var vData = 4;
+var hData = valuesRy.length;
+var offset = 50.5; //offset chart axis
+var chartHeight = ch - 2 * offset;
+var chartWidth = cw - 2 * offset;
+var t = 1 / 7; // curvature : 0 = no curvature
+var speed = 2; // for the animation
+
+var A = {
+  x: offset,
+  y: offset
+}
+var B = {
+  x: offset,
+  y: offset + chartHeight
+}
+var C = {
+  x: offset + chartWidth,
+  y: offset + chartHeight
+}
+
+/*
+      A  ^
+       |  |
+       + 25
+       |
+       |
+       |
+       + 25
+      |__|_________________________________  C
+      B
+*/
+
+// CHART AXIS -------------------------
+ctx.beginPath();
+ctx.moveTo(A.x, A.y);
+ctx.lineTo(B.x, B.y);
+ctx.lineTo(C.x, C.y);
+ctx.stroke();
+
+// vertical ( A - B )
+var aStep = (chartHeight - 50) / (vData);
+
+var Max = Math.ceil(arrayMax(valuesRy) / 10) * 10;
+var Min = Math.floor(arrayMin(valuesRy) / 10) * 10;
+var aStepValue = (Max - Min) / (vData);
+console.log("aStepValue: " + aStepValue); //8 units
+var verticalUnit = aStep / aStepValue;
+
+var a = [];
+ctx.textAlign = "right";
+ctx.textBaseline = "middle";
+for (var i = 0; i <= vData; i++) {
+
+  if (i == 0) {
+    a[i] = {
+      x: A.x,
+      y: A.y + 25,
+      val: Max
+    }
+  } else {
+    a[i] = {}
+    a[i].x = a[i - 1].x;
+    a[i].y = a[i - 1].y + aStep;
+    a[i].val = a[i - 1].val - aStepValue;
+  }
+  drawCoords(a[i], 3, 0);
+}
+
+//horizontal ( B - C )
+var b = [];
+ctx.textAlign = "center";
+ctx.textBaseline = "hanging";
+var bStep = chartWidth / (hData + 1);
+
+for (var i = 0; i < hData; i++) {
+  if (i == 0) {
+    b[i] = {
+      x: B.x + bStep,
+      y: B.y,
+      val: propsRy[0]
+    };
+  } else {
+    b[i] = {}
+    b[i].x = b[i - 1].x + bStep;
+    b[i].y = b[i - 1].y;
+    b[i].val = propsRy[i]
+  }
+  // drawCoords(b[i], 0, 3)
+}
+drawCoords(b[0], 0, 3)
+drawCoords(b[ {{ length[1] - 1 }} ], 0, 3)
+
+function drawCoords(o, offX, offY) {
+  ctx.beginPath();
+  ctx.moveTo(o.x - offX, o.y - offY);
+  ctx.lineTo(o.x + offX, o.y + offY);
+  ctx.stroke();
+
+  ctx.fillText(o.val, o.x - 2 * offX, o.y + 2 * offY);
+}
+//----------------------------------------------------------
+
+// DATA
+var oDots = [];
+var oFlat = [];
+var i = 0;
+
+for (var prop in oData) {
+  oDots[i] = {}
+  oFlat[i] = {}
+
+  oDots[i].x = b[i].x;
+  oFlat[i].x = b[i].x;
+
+  oDots[i].y = b[i].y - oData[prop] * verticalUnit - 25;
+  oFlat[i].y = b[i].y - 25;
+
+  oDots[i].val = oData[b[i].val];
+
+  i++
+}
+
+
+
+///// Animation Chart ///////////////////////////
+//var speed = 3;
+function animateChart() {
+  requestId = window.requestAnimationFrame(animateChart);
+  frames += speed; //console.log(frames)
+  ctx.clearRect(60, 0, cw, ch - 60);
+
+  for (var i = 0; i < oFlat.length; i++) {
+    if (oFlat[i].y > oDots[i].y) {
+      oFlat[i].y -= speed;
+    }
+  }
+  drawCurve(oFlat);
+  // for (var i = 0; i < oFlat.length; i++) {
+  //     ctx.fillText(oDots[i].val, oFlat[i].x, oFlat[i].y - 25);
+  //     ctx.beginPath();
+  //     ctx.arc(oFlat[i].x, oFlat[i].y, 3, 0, 2 * Math.PI);
+  //     ctx.fill();
+  //   }
+
+  if (frames >= Max * verticalUnit) {
+    window.cancelAnimationFrame(requestId);
+
+  }
+}
+requestId = window.requestAnimationFrame(animateChart);
+
+/////// EVENTS //////////////////////
+c.addEventListener("mousemove", function(e) {
+  label.innerHTML = "";
+  label.style.display = "none";
+  this.style.cursor = "default";
+
+  var m = oMousePos(this, e);
+  for (var i = 0; i < oDots.length; i++) {
+
+    output(m, i);
+  }
+
+}, false);
+
+function output(m, i) {
+  ctx.beginPath();
+  ctx.arc(oDots[i].x, oDots[i].y, 20, 0, 2 * Math.PI);
+  if (ctx.isPointInPath(m.x, m.y)) {
+    //console.log(i);
+    label.style.display = "block";
+    label.style.top = (m.y + 10) + "px";
+    label.style.left = (m.x + 10) + "px";
+    label.innerHTML = "<strong>" + propsRy[i] + "</strong>: " + valuesRy[i] + "%";
+    c.style.cursor = "pointer";
+  }
+}
+
+// CURVATURE
+function controlPoints(p) {
+  // given the points array p calculate the control points
+  var pc = [];
+  for (var i = 1; i < p.length - 1; i++) {
+    var dx = p[i - 1].x - p[i + 1].x; // difference x
+    var dy = p[i - 1].y - p[i + 1].y; // difference y
+    // the first control point
+    var x1 = p[i].x - dx * t;
+    var y1 = p[i].y - dy * t;
+    var o1 = {
+      x: x1,
+      y: y1
+    };
+
+    // the second control point
+    var x2 = p[i].x + dx * t;
+    var y2 = p[i].y + dy * t;
+    var o2 = {
+      x: x2,
+      y: y2
+    };
+
+    // building the control points array
+    pc[i] = [];
+    pc[i].push(o1);
+    pc[i].push(o2);
+  }
+  return pc;
+}
+
+function drawCurve(p) {
+
+  var pc = controlPoints(p); // the control points array
+
+  ctx.beginPath();
+  //ctx.moveTo(p[0].x, B.y- 25);
+  ctx.lineTo(p[0].x, p[0].y);
+  // the first & the last curve are quadratic Bezier
+  // because I'm using push(), pc[i][1] comes before pc[i][0]
+  ctx.quadraticCurveTo(pc[1][1].x, pc[1][1].y, p[1].x, p[1].y);
+
+  if (p.length > 2) {
+    // central curves are cubic Bezier
+    for (var i = 1; i < p.length - 2; i++) {
+      ctx.bezierCurveTo(pc[i][0].x, pc[i][0].y, pc[i + 1][1].x, pc[i + 1][1].y, p[i + 1].x, p[i + 1].y);
+    }
+    // the first & the last curve are quadratic Bezier
+    var n = p.length - 1;
+    ctx.quadraticCurveTo(pc[n - 1][0].x, pc[n - 1][0].y, p[n].x, p[n].y);
+  }
+
+  //ctx.lineTo(p[p.length-1].x, B.y- 25);
+  ctx.stroke();
+  ctx.save();
+  ctx.fillStyle = grd;
+  ctx.fill();
+  ctx.restore();
+}
+
+function arrayMax(array) {
+  return Math.max.apply(Math, array);
+};
+
+function arrayMin(array) {
+  return Math.min.apply(Math, array);
+};
+
+function oMousePos(canvas, evt) {
+  var ClientRect = canvas.getBoundingClientRect();
+  return { //objeto
+    x: Math.round(evt.clientX - ClientRect.left),
+    y: Math.round(evt.clientY - ClientRect.top)
+  }
+}
+
+        } // end li7
+
+
+        if ($(this).closest("li").attr("name") == "li8") {
+
+
+var label = document.querySelector(".label");
+var c = document.getElementById("e");
+var ctx = c.getContext("2d");
+var cw = c.width = 700;
+var ch = c.height = 350;
+var cx = cw / 2,
+  cy = ch / 2;
+var rad = Math.PI / 180;
+var frames = 0;
+
+ctx.lineWidth = 1;
+ctx.strokeStyle = "#000080";
+ctx.fillStyle = "000080";
+ctx.font = "14px monospace";
+
+var grd = ctx.createLinearGradient(0, 0, 0, cy);
+grd.addColorStop(0, "hsla(167,72%,60%,1)");
+grd.addColorStop(1, "hsla(167,72%,60%,0)");
+
+var oData = new Object();
+
+{% for i in range(length[2]) %}
+    oData[ {{ axis_x[2][i] }} ] = {{ gaze_list[2][i] }};
+ {% endfor %}
+
+var valuesRy = [];
+var propsRy = [];
+for (var prop in oData) {
+
+  valuesRy.push(oData[prop]);
+  propsRy.push(prop);
+
+
+}
+
+
+
+var vData = 4;
+var hData = valuesRy.length;
+var offset = 50.5; //offset chart axis
+var chartHeight = ch - 2 * offset;
+var chartWidth = cw - 2 * offset;
+var t = 1 / 7; // curvature : 0 = no curvature
+var speed = 2; // for the animation
+
+var A = {
+  x: offset,
+  y: offset
+}
+var B = {
+  x: offset,
+  y: offset + chartHeight
+}
+var C = {
+  x: offset + chartWidth,
+  y: offset + chartHeight
+}
+
+/*
+      A  ^
+       |  |
+       + 25
+       |
+       |
+       |
+       + 25
+      |__|_________________________________  C
+      B
+*/
+
+// CHART AXIS -------------------------
+ctx.beginPath();
+ctx.moveTo(A.x, A.y);
+ctx.lineTo(B.x, B.y);
+ctx.lineTo(C.x, C.y);
+ctx.stroke();
+
+// vertical ( A - B )
+var aStep = (chartHeight - 50) / (vData);
+
+var Max = Math.ceil(arrayMax(valuesRy) / 10) * 10;
+var Min = Math.floor(arrayMin(valuesRy) / 10) * 10;
+var aStepValue = (Max - Min) / (vData);
+console.log("aStepValue: " + aStepValue); //8 units
+var verticalUnit = aStep / aStepValue;
+
+var a = [];
+ctx.textAlign = "right";
+ctx.textBaseline = "middle";
+for (var i = 0; i <= vData; i++) {
+
+  if (i == 0) {
+    a[i] = {
+      x: A.x,
+      y: A.y + 25,
+      val: Max
+    }
+  } else {
+    a[i] = {}
+    a[i].x = a[i - 1].x;
+    a[i].y = a[i - 1].y + aStep;
+    a[i].val = a[i - 1].val - aStepValue;
+  }
+  drawCoords(a[i], 3, 0);
+}
+
+//horizontal ( B - C )
+var b = [];
+ctx.textAlign = "center";
+ctx.textBaseline = "hanging";
+var bStep = chartWidth / (hData + 1);
+
+for (var i = 0; i < hData; i++) {
+  if (i == 0) {
+    b[i] = {
+      x: B.x + bStep,
+      y: B.y,
+      val: propsRy[0]
+    };
+  } else {
+    b[i] = {}
+    b[i].x = b[i - 1].x + bStep;
+    b[i].y = b[i - 1].y;
+    b[i].val = propsRy[i]
+  }
+  // drawCoords(b[i], 0, 3)
+}
+drawCoords(b[0], 0, 3)
+drawCoords(b[ {{ length[2] - 1 }} ], 0, 3)
+
+function drawCoords(o, offX, offY) {
+  ctx.beginPath();
+  ctx.moveTo(o.x - offX, o.y - offY);
+  ctx.lineTo(o.x + offX, o.y + offY);
+  ctx.stroke();
+
+  ctx.fillText(o.val, o.x - 2 * offX, o.y + 2 * offY);
+}
+//----------------------------------------------------------
+
+// DATA
+var oDots = [];
+var oFlat = [];
+var i = 0;
+
+for (var prop in oData) {
+  oDots[i] = {}
+  oFlat[i] = {}
+
+  oDots[i].x = b[i].x;
+  oFlat[i].x = b[i].x;
+
+  oDots[i].y = b[i].y - oData[prop] * verticalUnit - 25;
+  oFlat[i].y = b[i].y - 25;
+
+  oDots[i].val = oData[b[i].val];
+
+  i++
+}
+
+
+
+///// Animation Chart ///////////////////////////
+//var speed = 3;
+function animateChart() {
+  requestId = window.requestAnimationFrame(animateChart);
+  frames += speed; //console.log(frames)
+  ctx.clearRect(60, 0, cw, ch - 60);
+
+  for (var i = 0; i < oFlat.length; i++) {
+    if (oFlat[i].y > oDots[i].y) {
+      oFlat[i].y -= speed;
+    }
+  }
+  drawCurve(oFlat);
+  // for (var i = 0; i < oFlat.length; i++) {
+  //     ctx.fillText(oDots[i].val, oFlat[i].x, oFlat[i].y - 25);
+  //     ctx.beginPath();
+  //     ctx.arc(oFlat[i].x, oFlat[i].y, 3, 0, 2 * Math.PI);
+  //     ctx.fill();
+  //   }
+
+  if (frames >= Max * verticalUnit) {
+    window.cancelAnimationFrame(requestId);
+
+  }
+}
+requestId = window.requestAnimationFrame(animateChart);
+
+/////// EVENTS //////////////////////
+c.addEventListener("mousemove", function(e) {
+  label.innerHTML = "";
+  label.style.display = "none";
+  this.style.cursor = "default";
+
+  var m = oMousePos(this, e);
+  for (var i = 0; i < oDots.length; i++) {
+
+    output(m, i);
+  }
+
+}, false);
+
+function output(m, i) {
+  ctx.beginPath();
+  ctx.arc(oDots[i].x, oDots[i].y, 20, 0, 2 * Math.PI);
+  if (ctx.isPointInPath(m.x, m.y)) {
+    //console.log(i);
+    label.style.display = "block";
+    label.style.top = (m.y + 10) + "px";
+    label.style.left = (m.x + 10) + "px";
+    label.innerHTML = "<strong>" + propsRy[i] + "</strong>: " + valuesRy[i] + "%";
+    c.style.cursor = "pointer";
+  }
+}
+
+// CURVATURE
+function controlPoints(p) {
+  // given the points array p calculate the control points
+  var pc = [];
+  for (var i = 1; i < p.length - 1; i++) {
+    var dx = p[i - 1].x - p[i + 1].x; // difference x
+    var dy = p[i - 1].y - p[i + 1].y; // difference y
+    // the first control point
+    var x1 = p[i].x - dx * t;
+    var y1 = p[i].y - dy * t;
+    var o1 = {
+      x: x1,
+      y: y1
+    };
+
+    // the second control point
+    var x2 = p[i].x + dx * t;
+    var y2 = p[i].y + dy * t;
+    var o2 = {
+      x: x2,
+      y: y2
+    };
+
+    // building the control points array
+    pc[i] = [];
+    pc[i].push(o1);
+    pc[i].push(o2);
+  }
+  return pc;
+}
+
+function drawCurve(p) {
+
+  var pc = controlPoints(p); // the control points array
+
+  ctx.beginPath();
+  //ctx.moveTo(p[0].x, B.y- 25);
+  ctx.lineTo(p[0].x, p[0].y);
+  // the first & the last curve are quadratic Bezier
+  // because I'm using push(), pc[i][1] comes before pc[i][0]
+  ctx.quadraticCurveTo(pc[1][1].x, pc[1][1].y, p[1].x, p[1].y);
+
+  if (p.length > 2) {
+    // central curves are cubic Bezier
+    for (var i = 1; i < p.length - 2; i++) {
+      ctx.bezierCurveTo(pc[i][0].x, pc[i][0].y, pc[i + 1][1].x, pc[i + 1][1].y, p[i + 1].x, p[i + 1].y);
+    }
+    // the first & the last curve are quadratic Bezier
+    var n = p.length - 1;
+    ctx.quadraticCurveTo(pc[n - 1][0].x, pc[n - 1][0].y, p[n].x, p[n].y);
+  }
+
+  //ctx.lineTo(p[p.length-1].x, B.y- 25);
+  ctx.stroke();
+  ctx.save();
+  ctx.fillStyle = grd;
+  ctx.fill();
+  ctx.restore();
+}
+
+function arrayMax(array) {
+  return Math.max.apply(Math, array);
+};
+
+function arrayMin(array) {
+  return Math.min.apply(Math, array);
+};
+
+function oMousePos(canvas, evt) {
+  var ClientRect = canvas.getBoundingClientRect();
+  return { //objeto
+    x: Math.round(evt.clientX - ClientRect.left),
+    y: Math.round(evt.clientY - ClientRect.top)
+  }
+}
+
+
+
+        } // end li8
+
+
+        if ($(this).closest("li").attr("name") == "li9") {
+
+
+        var label = document.querySelector(".label");
+var c = document.getElementById("f");
+var ctx = c.getContext("2d");
+var cw = c.width = 700;
+var ch = c.height = 350;
+var cx = cw / 2,
+  cy = ch / 2;
+var rad = Math.PI / 180;
+var frames = 0;
+
+ctx.lineWidth = 1;
+ctx.strokeStyle = "#000080";
+ctx.fillStyle = "000080";
+ctx.font = "14px monospace";
+
+var grd = ctx.createLinearGradient(0, 0, 0, cy);
+grd.addColorStop(0, "hsla(167,72%,60%,1)");
+grd.addColorStop(1, "hsla(167,72%,60%,0)");
+
+var oData = new Object();
+
+{% for i in range(length[3]) %}
+    oData[ {{ axis_x[3][i] }} ] = {{ gaze_list[3][i] }};
+ {% endfor %}
+
+var valuesRy = [];
+var propsRy = [];
+for (var prop in oData) {
+
+  valuesRy.push(oData[prop]);
+  propsRy.push(prop);
+
+
+}
+
+
+
+var vData = 4;
+var hData = valuesRy.length;
+var offset = 50.5; //offset chart axis
+var chartHeight = ch - 2 * offset;
+var chartWidth = cw - 2 * offset;
+var t = 1 / 7; // curvature : 0 = no curvature
+var speed = 2; // for the animation
+
+var A = {
+  x: offset,
+  y: offset
+}
+var B = {
+  x: offset,
+  y: offset + chartHeight
+}
+var C = {
+  x: offset + chartWidth,
+  y: offset + chartHeight
+}
+
+/*
+      A  ^
+       |  |
+       + 25
+       |
+       |
+       |
+       + 25
+      |__|_________________________________  C
+      B
+*/
+
+// CHART AXIS -------------------------
+ctx.beginPath();
+ctx.moveTo(A.x, A.y);
+ctx.lineTo(B.x, B.y);
+ctx.lineTo(C.x, C.y);
+ctx.stroke();
+
+// vertical ( A - B )
+var aStep = (chartHeight - 50) / (vData);
+
+var Max = Math.ceil(arrayMax(valuesRy) / 10) * 10;
+var Min = Math.floor(arrayMin(valuesRy) / 10) * 10;
+var aStepValue = (Max - Min) / (vData);
+console.log("aStepValue: " + aStepValue); //8 units
+var verticalUnit = aStep / aStepValue;
+
+var a = [];
+ctx.textAlign = "right";
+ctx.textBaseline = "middle";
+for (var i = 0; i <= vData; i++) {
+
+  if (i == 0) {
+    a[i] = {
+      x: A.x,
+      y: A.y + 25,
+      val: Max
+    }
+  } else {
+    a[i] = {}
+    a[i].x = a[i - 1].x;
+    a[i].y = a[i - 1].y + aStep;
+    a[i].val = a[i - 1].val - aStepValue;
+  }
+  drawCoords(a[i], 3, 0);
+}
+
+//horizontal ( B - C )
+var b = [];
+ctx.textAlign = "center";
+ctx.textBaseline = "hanging";
+var bStep = chartWidth / (hData + 1);
+
+for (var i = 0; i < hData; i++) {
+  if (i == 0) {
+    b[i] = {
+      x: B.x + bStep,
+      y: B.y,
+      val: propsRy[0]
+    };
+  } else {
+    b[i] = {}
+    b[i].x = b[i - 1].x + bStep;
+    b[i].y = b[i - 1].y;
+    b[i].val = propsRy[i]
+  }
+  // drawCoords(b[i], 0, 3)
+}
+drawCoords(b[0], 0, 3)
+drawCoords(b[ {{ length[3] - 1 }} ], 0, 3)
+
+function drawCoords(o, offX, offY) {
+  ctx.beginPath();
+  ctx.moveTo(o.x - offX, o.y - offY);
+  ctx.lineTo(o.x + offX, o.y + offY);
+  ctx.stroke();
+
+  ctx.fillText(o.val, o.x - 2 * offX, o.y + 2 * offY);
+}
+//----------------------------------------------------------
+
+// DATA
+var oDots = [];
+var oFlat = [];
+var i = 0;
+
+for (var prop in oData) {
+  oDots[i] = {}
+  oFlat[i] = {}
+
+  oDots[i].x = b[i].x;
+  oFlat[i].x = b[i].x;
+
+  oDots[i].y = b[i].y - oData[prop] * verticalUnit - 25;
+  oFlat[i].y = b[i].y - 25;
+
+  oDots[i].val = oData[b[i].val];
+
+  i++
+}
+
+
+
+///// Animation Chart ///////////////////////////
+//var speed = 3;
+function animateChart() {
+  requestId = window.requestAnimationFrame(animateChart);
+  frames += speed; //console.log(frames)
+  ctx.clearRect(60, 0, cw, ch - 60);
+
+  for (var i = 0; i < oFlat.length; i++) {
+    if (oFlat[i].y > oDots[i].y) {
+      oFlat[i].y -= speed;
+    }
+  }
+  drawCurve(oFlat);
+  // for (var i = 0; i < oFlat.length; i++) {
+  //     ctx.fillText(oDots[i].val, oFlat[i].x, oFlat[i].y - 25);
+  //     ctx.beginPath();
+  //     ctx.arc(oFlat[i].x, oFlat[i].y, 3, 0, 2 * Math.PI);
+  //     ctx.fill();
+  //   }
+
+  if (frames >= Max * verticalUnit) {
+    window.cancelAnimationFrame(requestId);
+
+  }
+}
+requestId = window.requestAnimationFrame(animateChart);
+
+/////// EVENTS //////////////////////
+c.addEventListener("mousemove", function(e) {
+  label.innerHTML = "";
+  label.style.display = "none";
+  this.style.cursor = "default";
+
+  var m = oMousePos(this, e);
+  for (var i = 0; i < oDots.length; i++) {
+
+    output(m, i);
+  }
+
+}, false);
+
+function output(m, i) {
+  ctx.beginPath();
+  ctx.arc(oDots[i].x, oDots[i].y, 20, 0, 2 * Math.PI);
+  if (ctx.isPointInPath(m.x, m.y)) {
+    //console.log(i);
+    label.style.display = "block";
+    label.style.top = (m.y + 10) + "px";
+    label.style.left = (m.x + 10) + "px";
+    label.innerHTML = "<strong>" + propsRy[i] + "</strong>: " + valuesRy[i] + "%";
+    c.style.cursor = "pointer";
+  }
+}
+
+// CURVATURE
+function controlPoints(p) {
+  // given the points array p calculate the control points
+  var pc = [];
+  for (var i = 1; i < p.length - 1; i++) {
+    var dx = p[i - 1].x - p[i + 1].x; // difference x
+    var dy = p[i - 1].y - p[i + 1].y; // difference y
+    // the first control point
+    var x1 = p[i].x - dx * t;
+    var y1 = p[i].y - dy * t;
+    var o1 = {
+      x: x1,
+      y: y1
+    };
+
+    // the second control point
+    var x2 = p[i].x + dx * t;
+    var y2 = p[i].y + dy * t;
+    var o2 = {
+      x: x2,
+      y: y2
+    };
+
+    // building the control points array
+    pc[i] = [];
+    pc[i].push(o1);
+    pc[i].push(o2);
+  }
+  return pc;
+}
+
+function drawCurve(p) {
+
+  var pc = controlPoints(p); // the control points array
+
+  ctx.beginPath();
+  //ctx.moveTo(p[0].x, B.y- 25);
+  ctx.lineTo(p[0].x, p[0].y);
+  // the first & the last curve are quadratic Bezier
+  // because I'm using push(), pc[i][1] comes before pc[i][0]
+  ctx.quadraticCurveTo(pc[1][1].x, pc[1][1].y, p[1].x, p[1].y);
+
+  if (p.length > 2) {
+    // central curves are cubic Bezier
+    for (var i = 1; i < p.length - 2; i++) {
+      ctx.bezierCurveTo(pc[i][0].x, pc[i][0].y, pc[i + 1][1].x, pc[i + 1][1].y, p[i + 1].x, p[i + 1].y);
+    }
+    // the first & the last curve are quadratic Bezier
+    var n = p.length - 1;
+    ctx.quadraticCurveTo(pc[n - 1][0].x, pc[n - 1][0].y, p[n].x, p[n].y);
+  }
+
+  //ctx.lineTo(p[p.length-1].x, B.y- 25);
+  ctx.stroke();
+  ctx.save();
+  ctx.fillStyle = grd;
+  ctx.fill();
+  ctx.restore();
+}
+
+function arrayMax(array) {
+  return Math.max.apply(Math, array);
+};
+
+function arrayMin(array) {
+  return Math.min.apply(Math, array);
+};
+
+function oMousePos(canvas, evt) {
+  var ClientRect = canvas.getBoundingClientRect();
+  return { //objeto
+    x: Math.round(evt.clientX - ClientRect.left),
+    y: Math.round(evt.clientY - ClientRect.top)
+  }
+}
+
+
+
+        } // end li9
+
+        if ($(this).closest("li").attr("name") == "li10") {
+
+
+        var label = document.querySelector(".label");
+var c = document.getElementById("g");
+var ctx = c.getContext("2d");
+var cw = c.width = 700;
+var ch = c.height = 350;
+var cx = cw / 2,
+  cy = ch / 2;
+var rad = Math.PI / 180;
+var frames = 0;
+
+ctx.lineWidth = 1;
+ctx.strokeStyle = "#000080";
+ctx.fillStyle = "000080";
+ctx.font = "14px monospace";
+
+var grd = ctx.createLinearGradient(0, 0, 0, cy);
+grd.addColorStop(0, "hsla(167,72%,60%,1)");
+grd.addColorStop(1, "hsla(167,72%,60%,0)");
+
+var oData = new Object();
+
+{% for i in range(length[4]) %}
+    oData[ {{ axis_x[4][i] }} ] = {{ gaze_list[4][i] }};
+ {% endfor %}
+
+var valuesRy = [];
+var propsRy = [];
+for (var prop in oData) {
+
+  valuesRy.push(oData[prop]);
+  propsRy.push(prop);
+
+
+}
+
+
+
+var vData = 4;
+var hData = valuesRy.length;
+var offset = 50.5; //offset chart axis
+var chartHeight = ch - 2 * offset;
+var chartWidth = cw - 2 * offset;
+var t = 1 / 7; // curvature : 0 = no curvature
+var speed = 2; // for the animation
+
+var A = {
+  x: offset,
+  y: offset
+}
+var B = {
+  x: offset,
+  y: offset + chartHeight
+}
+var C = {
+  x: offset + chartWidth,
+  y: offset + chartHeight
+}
+
+/*
+      A  ^
+       |  |
+       + 25
+       |
+       |
+       |
+       + 25
+      |__|_________________________________  C
+      B
+*/
+
+// CHART AXIS -------------------------
+ctx.beginPath();
+ctx.moveTo(A.x, A.y);
+ctx.lineTo(B.x, B.y);
+ctx.lineTo(C.x, C.y);
+ctx.stroke();
+
+// vertical ( A - B )
+var aStep = (chartHeight - 50) / (vData);
+
+var Max = Math.ceil(arrayMax(valuesRy) / 10) * 10;
+var Min = Math.floor(arrayMin(valuesRy) / 10) * 10;
+var aStepValue = (Max - Min) / (vData);
+console.log("aStepValue: " + aStepValue); //8 units
+var verticalUnit = aStep / aStepValue;
+
+var a = [];
+ctx.textAlign = "right";
+ctx.textBaseline = "middle";
+for (var i = 0; i <= vData; i++) {
+
+  if (i == 0) {
+    a[i] = {
+      x: A.x,
+      y: A.y + 25,
+      val: Max
+    }
+  } else {
+    a[i] = {}
+    a[i].x = a[i - 1].x;
+    a[i].y = a[i - 1].y + aStep;
+    a[i].val = a[i - 1].val - aStepValue;
+  }
+  drawCoords(a[i], 3, 0);
+}
+
+//horizontal ( B - C )
+var b = [];
+ctx.textAlign = "center";
+ctx.textBaseline = "hanging";
+var bStep = chartWidth / (hData + 1);
+
+for (var i = 0; i < hData; i++) {
+  if (i == 0) {
+    b[i] = {
+      x: B.x + bStep,
+      y: B.y,
+      val: propsRy[0]
+    };
+  } else {
+    b[i] = {}
+    b[i].x = b[i - 1].x + bStep;
+    b[i].y = b[i - 1].y;
+    b[i].val = propsRy[i]
+  }
+  // drawCoords(b[i], 0, 3)
+}
+drawCoords(b[0], 0, 3)
+drawCoords(b[ {{ length[4] - 1 }} ], 0, 3)
+
+function drawCoords(o, offX, offY) {
+  ctx.beginPath();
+  ctx.moveTo(o.x - offX, o.y - offY);
+  ctx.lineTo(o.x + offX, o.y + offY);
+  ctx.stroke();
+
+  ctx.fillText(o.val, o.x - 2 * offX, o.y + 2 * offY);
+}
+//----------------------------------------------------------
+
+// DATA
+var oDots = [];
+var oFlat = [];
+var i = 0;
+
+for (var prop in oData) {
+  oDots[i] = {}
+  oFlat[i] = {}
+
+  oDots[i].x = b[i].x;
+  oFlat[i].x = b[i].x;
+
+  oDots[i].y = b[i].y - oData[prop] * verticalUnit - 25;
+  oFlat[i].y = b[i].y - 25;
+
+  oDots[i].val = oData[b[i].val];
+
+  i++
+}
+
+
+
+///// Animation Chart ///////////////////////////
+//var speed = 3;
+function animateChart() {
+  requestId = window.requestAnimationFrame(animateChart);
+  frames += speed; //console.log(frames)
+  ctx.clearRect(60, 0, cw, ch - 60);
+
+  for (var i = 0; i < oFlat.length; i++) {
+    if (oFlat[i].y > oDots[i].y) {
+      oFlat[i].y -= speed;
+    }
+  }
+  drawCurve(oFlat);
+  // for (var i = 0; i < oFlat.length; i++) {
+  //     ctx.fillText(oDots[i].val, oFlat[i].x, oFlat[i].y - 25);
+  //     ctx.beginPath();
+  //     ctx.arc(oFlat[i].x, oFlat[i].y, 3, 0, 2 * Math.PI);
+  //     ctx.fill();
+  //   }
+
+  if (frames >= Max * verticalUnit) {
+    window.cancelAnimationFrame(requestId);
+
+  }
+}
+requestId = window.requestAnimationFrame(animateChart);
+
+/////// EVENTS //////////////////////
+c.addEventListener("mousemove", function(e) {
+  label.innerHTML = "";
+  label.style.display = "none";
+  this.style.cursor = "default";
+
+  var m = oMousePos(this, e);
+  for (var i = 0; i < oDots.length; i++) {
+
+    output(m, i);
+  }
+
+}, false);
+
+function output(m, i) {
+  ctx.beginPath();
+  ctx.arc(oDots[i].x, oDots[i].y, 20, 0, 2 * Math.PI);
+  if (ctx.isPointInPath(m.x, m.y)) {
+    //console.log(i);
+    label.style.display = "block";
+    label.style.top = (m.y + 10) + "px";
+    label.style.left = (m.x + 10) + "px";
+    label.innerHTML = "<strong>" + propsRy[i] + "</strong>: " + valuesRy[i] + "%";
+    c.style.cursor = "pointer";
+  }
+}
+
+// CURVATURE
+function controlPoints(p) {
+  // given the points array p calculate the control points
+  var pc = [];
+  for (var i = 1; i < p.length - 1; i++) {
+    var dx = p[i - 1].x - p[i + 1].x; // difference x
+    var dy = p[i - 1].y - p[i + 1].y; // difference y
+    // the first control point
+    var x1 = p[i].x - dx * t;
+    var y1 = p[i].y - dy * t;
+    var o1 = {
+      x: x1,
+      y: y1
+    };
+
+    // the second control point
+    var x2 = p[i].x + dx * t;
+    var y2 = p[i].y + dy * t;
+    var o2 = {
+      x: x2,
+      y: y2
+    };
+
+    // building the control points array
+    pc[i] = [];
+    pc[i].push(o1);
+    pc[i].push(o2);
+  }
+  return pc;
+}
+
+function drawCurve(p) {
+
+  var pc = controlPoints(p); // the control points array
+
+  ctx.beginPath();
+  //ctx.moveTo(p[0].x, B.y- 25);
+  ctx.lineTo(p[0].x, p[0].y);
+  // the first & the last curve are quadratic Bezier
+  // because I'm using push(), pc[i][1] comes before pc[i][0]
+  ctx.quadraticCurveTo(pc[1][1].x, pc[1][1].y, p[1].x, p[1].y);
+
+  if (p.length > 2) {
+    // central curves are cubic Bezier
+    for (var i = 1; i < p.length - 2; i++) {
+      ctx.bezierCurveTo(pc[i][0].x, pc[i][0].y, pc[i + 1][1].x, pc[i + 1][1].y, p[i + 1].x, p[i + 1].y);
+    }
+    // the first & the last curve are quadratic Bezier
+    var n = p.length - 1;
+    ctx.quadraticCurveTo(pc[n - 1][0].x, pc[n - 1][0].y, p[n].x, p[n].y);
+  }
+
+  //ctx.lineTo(p[p.length-1].x, B.y- 25);
+  ctx.stroke();
+  ctx.save();
+  ctx.fillStyle = grd;
+  ctx.fill();
+  ctx.restore();
+}
+
+function arrayMax(array) {
+  return Math.max.apply(Math, array);
+};
+
+function arrayMin(array) {
+  return Math.min.apply(Math, array);
+};
+
+function oMousePos(canvas, evt) {
+  var ClientRect = canvas.getBoundingClientRect();
+  return { //objeto
+    x: Math.round(evt.clientX - ClientRect.left),
+    y: Math.round(evt.clientY - ClientRect.top)
+  }
+}
+
+
+        } // end li10
+
+
+
+
+
+
+
+} // end else
+
+
+
+
+
+
+
+
+
+
+// end script
+    });
+});
+
+    </script>
+
+
+</div>
+</div>
+<br>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

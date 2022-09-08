@@ -1,0 +1,182 @@
+  body{
+         text-align: center;
+         display: block;
+         margin: 0 auto;
+         font-size: 16px;
+         color: #999;
+         background-size: contain;
+
+     }
+
+     h1{
+         font-family: 'Oswald', sans-serif;
+         font-size: 30px;
+         color: #216182;
+     }
+
+			.tabbed.round ul li {
+				border-radius: 8px 8px 0 0;
+			}
+			.tabbed.round ul li:before {
+				border-radius: 0 8px 0 0;
+			}
+			.tabbed.round ul li:after {
+				border-radius: 8px 0 0 0;
+			}
+
+						@import url(http://fonts.googleapis.com/css?family=Roboto:300,400);
+
+			html, body {
+				margin: 0;
+				padding: 0;
+				background: #E8ECEF;
+				height: 100%;
+				width: 100%;
+				text-align: center;
+			}
+			h1{
+			    font: 400 30px roboto, "Open Sans", Helvetica, sans-serif;
+				text-transform: uppercase;
+			}
+			h2{
+			    font: 300 22px roboto, "Open Sans", Helvetica, sans-serif;
+				text-transform: uppercase;
+			}
+
+				.tabbed {
+				width: 80%;
+				min-width: 400px;
+				margin: 0 auto;
+				margin-bottom: 68px;
+				border-bottom: 4px solid #000;
+				overflow: hidden;
+				transition: border 250ms ease;
+			}
+			.tabbed ul {
+				margin: 0px;
+				padding: 0px;
+				overflow: hidden;
+				float: left;
+				padding-left: 48px;
+				list-style-type: none;
+			}
+			.tabbed ul * {
+				margin: 0px;
+				padding: 0px;
+			}
+			.tabbed ul li {
+				display: block;
+				float: right;
+				padding: 10px 24px 8px;
+				background-color: #FFF;
+				margin-right: 46px;
+				z-index: 2;
+				position: relative;
+				cursor: pointer;
+				color: #777;
+
+				text-transform: uppercase;
+				font: 600 13px/20px roboto, "Open Sans", Helvetica, sans-serif;
+
+				transition: all 250ms ease;
+			}
+			.tabbed ul li:before,
+			.tabbed ul li:after {
+				display: block;
+				content: " ";
+				position: absolute;
+				top: 0;
+				height: 100%;
+				width: 44px;
+				background-color: #FFF;
+				transition: all 250ms ease;
+			}
+			.tabbed ul li:before {
+				right: -24px;
+				transform: skew(30deg, 0deg);
+				box-shadow: rgba(0,0,0,.1) 3px 2px 5px, inset rgba(255,255,255,.09) -1px 0;
+			}
+			.tabbed ul li:after {
+				left: -24px;
+				transform: skew(-30deg, 0deg);
+				box-shadow: rgba(0,0,0,.1) -3px 2px 5px, inset rgba(255,255,255,.09) 1px 0;
+			}
+			.tabbed ul li:hover,
+			.tabbed ul li:hover:before,
+			.tabbed ul li:hover:after {
+				background-color: #F4F7F9;
+				color: #444;
+			}
+			.tabbed ul li.active {
+				z-index: 3;
+			}
+			.tabbed ul li.active,
+			.tabbed ul li.active:before,
+			.tabbed ul li.active:after {
+				background-color: #000;
+				color: #fff;
+			}
+
+			/* Round Tabs */
+			.tabbed.round ul li {
+				border-radius: 8px 8px 0 0;
+			}
+			.tabbed.round ul li:before {
+				border-radius: 0 8px 0 0;
+			}
+			.tabbed.round ul li:after {
+				border-radius: 8px 0 0 0;
+			}
+
+			.button {
+	display: inline-block;
+	position: relative;
+	margin: 10px;
+	padding: 0 20px;
+	text-align: center;
+	text-decoration: none;
+	text-shadow: 1px 1px 1px rgba(255,255,255,.22);
+	font: bold 12px/25px Arial, sans-serif;
+
+	-webkit-border-radius: 30px;
+	-moz-border-radius: 30px;
+	border-radius: 30px;
+
+	-webkit-box-shadow: 1px 1px 1px rgba(0,0,0,.29), inset 1px 1px 1px rgba(255,255,255,.44);
+	-moz-box-shadow: 1px 1px 1px rgba(0,0,0,.29), inset 1px 1px 1px rgba(255,255,255,.44);
+	box-shadow: 1px 1px 1px rgba(0,0,0,.29), inset 1px 1px 1px rgba(255,255,255,.44);
+
+	-webkit-transition: all 0.15s ease;
+	-moz-transition: all 0.15s ease;
+	-o-transition: all 0.15s ease;
+	-ms-transition: all 0.15s ease;
+	transition: all 0.15s ease;
+}
+
+	.button:hover {
+		-webkit-box-shadow: 1px 1px 1px rgba(0,0,0,.29), inset 0px 0px 2px rgba(0,0,0, .5);
+		-moz-box-shadow: 1px 1px 1px rgba(0,0,0,.29), inset 0px 0px 2px rgba(0,0,0, .5);
+		box-shadow: 1px 1px 1px rgba(0,0,0,.29), inset 0px 0px 2px rgba(0,0,0, .5);
+	}
+
+	.button:active {
+		-webkit-box-shadow: inset 0px 0px 3px rgba(0,0,0, .8);
+		-moz-box-shadow: inset 0px 0px 3px rgba(0,0,0, .8);
+		box-shadow: inset 0px 0px 3px rgba(0,0,0, .8);
+	}
+
+
+
+/* Gray Color */
+
+.gray {
+	color: #515151;
+
+	background: #d3d3d3; /* Old browsers */
+	background: -moz-linear-gradient(top,  #d3d3d3 0%, #8a8a8a 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#d3d3d3), color-stop(100%,#8a8a8a)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #d3d3d3 0%,#8a8a8a 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #d3d3d3 0%,#8a8a8a 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #d3d3d3 0%,#8a8a8a 100%); /* IE10+ */
+	background: linear-gradient(top,  #d3d3d3 0%,#8a8a8a 100%); /* W3C */
+}
