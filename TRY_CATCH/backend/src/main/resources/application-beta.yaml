@@ -1,0 +1,51 @@
+spring:
+  datasource:
+    driver-class-name: org.mariadb.jdbc.Driver
+    url: jdbc:mariadb://mariadb_dev:3306/TRY_CATCH?serverTimezone=UTC&useUnicode=true&characterEncoding=utf8
+    username: S08P12E108
+    password: LGBmz7o81b
+    hikari:
+      validation-timeout: 2000
+      maximum-pool-size: 999
+
+  security:
+    oauth2:
+      client:
+        registration:
+          github:
+            clientId: 59337ab984d458daff27
+            client-secret: 514d47261ada2a2d6b0569c17ad6b88d8ecd504b
+            redirect-uri: https://beta.api.try-catch.duckdns.org/login/oauth2/code/github
+            scope:
+              - user:email
+              - read:user
+              - repo
+
+logging:
+  level:
+#    com.zaxxer.hikari.HikariConfig: DEBUG
+#    com.zaxxer.hikari: TRACE
+    root: info
+
+elasticsearch:
+  index:
+    prefix: beta
+
+settings:
+  login:
+    on_success:
+      redirect_uri: https://beta.try-catch.duckdns.org
+    on_fail:
+      redirect_uri: https://beta.try-catch.duckdns.org/error
+
+  cross-origin: >
+    http://localhost:5173,
+    https://beta.try-catch.duckdns.org,
+
+# >
+#   http://localhost:5173,
+#   https://beta.try-catch.duckdns.org
+
+
+apiPrefix:
+  v1

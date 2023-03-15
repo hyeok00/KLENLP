@@ -1,0 +1,91 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '2.7.7'
+    id 'io.spring.dependency-management' version '1.0.15.RELEASE'
+    id "org.asciidoctor.jvm.convert" version "3.3.2"
+}
+
+group = 'com.ssafy'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+configurations {
+    asciidoctorExt
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+ext {
+    snippetsDir=file('build/generated-snippets')
+    jwtVersion='0.11.5'
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-data-elasticsearch'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.springframework.boot:spring-boot-starter-graphql'
+    implementation 'org.springframework.boot:spring-boot-starter-mail'
+    implementation 'org.springframework.boot:spring-boot-starter-validation'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-webflux'
+    implementation 'org.springframework.kafka:spring-kafka'
+    implementation 'com.h2database:h2:1.4.200'
+
+    // https://mvnrepository.com/artifact/org.kohsuke/github-api
+    implementation 'org.kohsuke:github-api:1.313'
+
+    // JWT
+    implementation "io.jsonwebtoken:jjwt-api:${jwtVersion}"
+    implementation "io.jsonwebtoken:jjwt-impl:${jwtVersion}"
+    implementation "io.jsonwebtoken:jjwt-jackson:${jwtVersion}"
+
+    // Git
+    implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+    implementation 'jakarta.json:jakarta.json-api:2.1.1'
+    implementation 'io.github.classgraph:classgraph:4.8.154'
+    implementation group: 'org.springdoc', name: 'springdoc-openapi-ui', version: '1.5.9'
+    implementation 'io.swagger:swagger-annotations:1.6.8'
+
+    asciidoctorExt 'org.springframework.restdocs:spring-restdocs-asciidoctor'
+
+
+    compileOnly 'org.projectlombok:lombok'
+    runtimeOnly 'org.mariadb.jdbc:mariadb-java-client'
+    annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
+    annotationProcessor 'org.projectlombok:lombok'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'io.projectreactor:reactor-test'
+    testImplementation 'org.springframework.graphql:spring-graphql-test'
+    testImplementation 'org.springframework.kafka:spring-kafka-test'
+    testImplementation 'org.springframework.restdocs:spring-restdocs-mockmvc'
+    testImplementation 'org.springframework.security:spring-security-test'
+}
+
+test {
+    outputs.dir snippetsDir
+    useJUnitPlatform()
+}
+
+asciidoctor {
+    dependsOn test
+    inputs.dir snippetsDir
+    configurations 'asciidoctorExt'
+}
+
+bootJar {
+//    dependsOn asciidoctor
+//    println("${asciidoctor.outputDir}")
+//    copy {
+//        from asciidoctor.outputDir
+//        into "src/main/resources/static/docs"
+//    }
+//    from ("${asciidoctor.outputDir}") {
+//        into 'static/docs'
+//    }
+}
